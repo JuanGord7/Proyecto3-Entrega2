@@ -1,6 +1,6 @@
 package logica;
 
-import igu.MenuPrincipal;
+import igu.*;
 
 public class Aplicacion {
     public static void main(String[] args){
