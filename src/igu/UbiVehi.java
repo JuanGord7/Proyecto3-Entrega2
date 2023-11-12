@@ -219,9 +219,9 @@ public class UbiVehi extends javax.swing.JFrame {
     }//GEN-LAST:event_PlacaTfActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
-        AdminGeneral ventaAdminGen = new AdminGeneral();
-        ventaAdminGen.setVisible(true);
-        ventaAdminGen.setLocationRelativeTo(null);
+        IniSesion ventaInises = new IniSesion();
+        ventaInises.setVisible(true);
+        ventaInises.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_VolverBtnActionPerformed
 
