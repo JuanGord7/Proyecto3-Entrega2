@@ -178,17 +178,18 @@ public class ElimEmpl extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Se ha eliminado el empleado del sistema.");
             } else{
                 nuevTabl.addRow(info);
-            }}
-            this.jtDatos.setModel(nuevTabl);
-            if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-                modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
-            } else {
-                JOptionPane.showMessageDialog(this, "Elija un formato valido.");
             }
-            AdminLocal ventaAdminLoc = new AdminLocal();
-            ventaAdminLoc.setVisible(true);
-            ventaAdminLoc.setLocationRelativeTo(null);
-            this.setVisible(false);
+        }
+        this.jtDatos.setModel(nuevTabl);
+        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
+            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(this, "Elija un formato valido.");
+        }
+        AdminLocal ventaAdminLoc = new AdminLocal();
+        ventaAdminLoc.setVisible(true);
+        ventaAdminLoc.setLocationRelativeTo(null);
+        this.setVisible(false);
         
     }//GEN-LAST:event_ElimEmplBtnActionPerformed
 
