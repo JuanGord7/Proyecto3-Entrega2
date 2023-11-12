@@ -199,7 +199,13 @@ public class IniSesion extends javax.swing.JFrame {
                     ventaAdminLoc.setVisible(true);
                     ventaAdminLoc.setLocationRelativeTo(null);
                     this.setVisible(false);
+                } else if (String.valueOf(jtDatos.getValueAt(i, 2)).equals("AdminGen")){
+                    AdminGeneral ventaAdminGen = new AdminGeneral();
+                    ventaAdminGen.setVisible(true);
+                    ventaAdminGen.setLocationRelativeTo(null);
+                    this.setVisible(false);
                 }
+                
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
