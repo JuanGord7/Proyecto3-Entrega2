@@ -4,17 +4,30 @@
  */
 package igu;
 
+import java.io.File;
+import javax.swing.JOptionPane;
+import logica.ImportarExportar;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author jumag
  */
 public class UbiVehi extends javax.swing.JFrame {
-
+    ImportarExportar modeloE = new ImportarExportar();
+    DefaultTableModel nuevTabl;
+    String NumSede;
     /**
      * Creates new form UbiVehi
      */
     public UbiVehi() {
         initComponents();
+        nuevTabl=new DefaultTableModel();
+        nuevTabl.addColumn("Placa");
+        nuevTabl.addColumn("Marca");
+        nuevTabl.addColumn("Color");
+        nuevTabl.addColumn("Transmisión");
+        nuevTabl.addColumn("Categoría");
+        nuevTabl.addColumn("Número de sede");
     }
 
     /**
@@ -27,25 +40,28 @@ public class UbiVehi extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        IniSesionBtn = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        UbiVehBtn = new javax.swing.JButton();
+        PlacaTf = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtDatos = new javax.swing.JTable();
+        VolverBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        IniSesionBtn.setBackground(new java.awt.Color(0, 0, 0));
-        IniSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
-        IniSesionBtn.setText("Buscar Ubicación del Vehículo");
-        IniSesionBtn.addActionListener(new java.awt.event.ActionListener() {
+        UbiVehBtn.setBackground(new java.awt.Color(0, 0, 0));
+        UbiVehBtn.setForeground(new java.awt.Color(255, 255, 255));
+        UbiVehBtn.setText("Buscar Ubicación del Vehículo");
+        UbiVehBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IniSesionBtnActionPerformed(evt);
+                UbiVehBtnActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        PlacaTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                PlacaTfActionPerformed(evt);
             }
         });
 
@@ -56,6 +72,34 @@ public class UbiVehi extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         jLabel1.setText("Ubicación Vehículo ");
 
+        jtDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Contraseña"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtDatos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jtDatos);
+
+        VolverBtn.setBackground(new java.awt.Color(0, 0, 0));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -63,13 +107,21 @@ public class UbiVehi extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IniSesionBtn)
+                    .addComponent(UbiVehBtn)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(VolverBtn)
+                        .addGap(56, 56, 56)))
                 .addGap(0, 43, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(268, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,11 +130,18 @@ public class UbiVehi extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addComponent(UbiVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(155, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -99,22 +158,81 @@ public class UbiVehi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IniSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniSesionBtnActionPerformed
-        IniSesion ventaIniSesion = new IniSesion();
-        ventaIniSesion.setVisible(true);
-        ventaIniSesion.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }//GEN-LAST:event_IniSesionBtnActionPerformed
+    private void UbiVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UbiVehBtnActionPerformed
+        String nombreArchivo = "Vehiculos.xlsx";
+        File archivo = new File(nombreArchivo);
+        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
+            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        }
+        String []info=new String[6];
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
+            String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
+            String Color = String.valueOf(jtDatos.getValueAt(i, 2));
+            String Trans = String.valueOf(jtDatos.getValueAt(i, 3));
+            String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
+            String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
+            info[0]=Placa;
+            info[1]=Marca;
+            info[2]=Color;
+            info[3]=Trans;
+            info[4]=Cate;
+            info[5]=Numse;
+            nuevTabl.addRow(info);
+            if (PlacaTf.getText().equals(Placa)){
+                NumSede = Numse;
+            }
+        }
+        nombreArchivo = "Sedes.xlsx";
+        File archivo1 = new File(nombreArchivo);
+        if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
+            modeloE.Importar(archivo1, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        }
+        info=new String[5];
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            String Numero = String.valueOf(i+1);
+            String Nombre = String.valueOf(jtDatos.getValueAt(i, 1));
+            String Ubi = String.valueOf(jtDatos.getValueAt(i, 2));
+            String HorA = String.valueOf(jtDatos.getValueAt(i, 3));
+            String HorC = String.valueOf(jtDatos.getValueAt(i, 4));
+            info[0]=Numero;
+            info[1]=Nombre;
+            info[2]=Ubi;
+            info[3]=HorA;
+            info[4]=HorC;
+            if (Numero.equals(NumSede)){
+                JOptionPane.showMessageDialog(null, "El vehiculo está en la sede "+Nombre);
+                AdminGeneral ventaAdminGen = new AdminGeneral();
+                ventaAdminGen.setVisible(true);
+                ventaAdminGen.setLocationRelativeTo(null);
+                this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_UbiVehBtnActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void PlacaTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlacaTfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_PlacaTfActionPerformed
+
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        AdminGeneral ventaAdminGen = new AdminGeneral();
+        ventaAdminGen.setVisible(true);
+        ventaAdminGen.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_VolverBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton IniSesionBtn;
+    private javax.swing.JTextField PlacaTf;
+    private javax.swing.JButton UbiVehBtn;
+    private javax.swing.JButton VolverBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jtDatos;
     // End of variables declaration//GEN-END:variables
 }
