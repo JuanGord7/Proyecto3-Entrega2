@@ -417,9 +417,9 @@ public class CreaRese extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
         JOptionPane.showMessageDialog(null, "Ha hecho una reserva, el número es "+info[0]+" para el "+info[2]);
-        Empleado ventaEmpl = new Empleado();
-        ventaEmpl.setVisible(true);
-        ventaEmpl.setLocationRelativeTo(null);
+        Cliente ventaClie = new Cliente();
+        ventaClie.setVisible(true);
+        ventaClie.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_ReseBtnActionPerformed
 
@@ -440,9 +440,9 @@ public class CreaRese extends javax.swing.JFrame {
     }//GEN-LAST:event_UbiRecJcbActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
-        Empleado ventaEmpl = new Empleado();
-        ventaEmpl.setVisible(true);
-        ventaEmpl.setLocationRelativeTo(null);
+        Cliente ventaClie = new Cliente();
+        ventaClie.setVisible(true);
+        ventaClie.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_VolverBtnActionPerformed
     private void llenarComboBox() {

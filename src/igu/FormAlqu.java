@@ -4,17 +4,46 @@
  */
 package igu;
 
+import java.io.File;
+import javax.swing.JOptionPane;
+import logica.ImportarExportar;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author jumag
  */
 public class FormAlqu extends javax.swing.JFrame {
-
+    ImportarExportar modeloE = new ImportarExportar();
+    DefaultTableModel nuevTabl;
+    DefaultTableModel nuevTabl1;
+    
     /**
      * Creates new form FormAlqu
      */
     public FormAlqu() {
         initComponents();
+        nuevTabl=new DefaultTableModel();
+        nuevTabl.addColumn("Id");
+        nuevTabl.addColumn("Categoría");
+        nuevTabl.addColumn("Fecha recogida");
+        nuevTabl.addColumn("Ubicación recogida");
+        nuevTabl.addColumn("Ubicación entrega");
+        nuevTabl.addColumn("Fecha entrega temprano");
+        nuevTabl.addColumn("Fecha entrega Tarde");
+        nuevTabl.addColumn("Usuario cliente");
+        nuevTabl.addColumn("Contraseña cliente");
+        nuevTabl.addColumn("Conductores extra");
+        nuevTabl.addColumn("Usuario del conductor");
+        nuevTabl.addColumn("Contraseña del conductor");
+        nuevTabl.addColumn("Reserva");
+        nuevTabl1=new DefaultTableModel();
+        nuevTabl1.addColumn("Placa");
+        nuevTabl1.addColumn("Marca");
+        nuevTabl1.addColumn("Color");
+        nuevTabl1.addColumn("Transmisión");
+        nuevTabl1.addColumn("Categoría");
+        nuevTabl1.addColumn("Número de sede");
+        nuevTabl1.addColumn("Id Alquiler");
     }
 
     /**
@@ -27,26 +56,28 @@ public class FormAlqu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        IniSesionBtn = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        FormAlquBtn = new javax.swing.JButton();
+        IdResTf = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         VolverBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtDatos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        IniSesionBtn.setBackground(new java.awt.Color(0, 0, 0));
-        IniSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
-        IniSesionBtn.setText("Formalizar alquiler");
-        IniSesionBtn.addActionListener(new java.awt.event.ActionListener() {
+        FormAlquBtn.setBackground(new java.awt.Color(0, 0, 0));
+        FormAlquBtn.setForeground(new java.awt.Color(255, 255, 255));
+        FormAlquBtn.setText("Formalizar alquiler");
+        FormAlquBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IniSesionBtnActionPerformed(evt);
+                FormAlquBtnActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        IdResTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                IdResTfActionPerformed(evt);
             }
         });
 
@@ -66,6 +97,25 @@ public class FormAlqu extends javax.swing.JFrame {
             }
         });
 
+        jtDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Contraseña"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtDatos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jtDatos);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -79,14 +129,19 @@ public class FormAlqu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(IniSesionBtn)
+                                .addComponent(FormAlquBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(VolverBtn))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(IdResTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(30, 30, 30))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(274, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,12 +151,16 @@ public class FormAlqu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IdResTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FormAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 169, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,13 +177,147 @@ public class FormAlqu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IniSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniSesionBtnActionPerformed
+    private void FormAlquBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormAlquBtnActionPerformed
+        String nombreArchivoAlquileres = "Alquileres.xlsx";
+        File archivoAlquileres = new File(nombreArchivoAlquileres);
+        if (archivoAlquileres.getName().endsWith("xls") || archivoAlquileres.getName().endsWith("xlsx")) {
+            modeloE.Importar(archivoAlquileres, jtDatos);
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato válido para Alquileres.");
+        }
 
-    }//GEN-LAST:event_IniSesionBtnActionPerformed
+        String[] datoRese = null;
+        String[] info = new String[13];
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            String Id = String.valueOf(jtDatos.getValueAt(i, 0));
+            String Cate = String.valueOf(jtDatos.getValueAt(i, 1));
+            String FecRec = String.valueOf(jtDatos.getValueAt(i, 2));
+            String UbiRec = String.valueOf(jtDatos.getValueAt(i, 3));
+            String UbiEnt = String.valueOf(jtDatos.getValueAt(i, 4));
+            String FecEntTemp = String.valueOf(jtDatos.getValueAt(i, 5));
+            String FecEntTar = String.valueOf(jtDatos.getValueAt(i, 6));
+            String UsuCli = String.valueOf(jtDatos.getValueAt(i, 7));
+            String ConCli = String.valueOf(jtDatos.getValueAt(i, 8));
+            String CondEx = String.valueOf(jtDatos.getValueAt(i, 9));
+            String UsuCond = String.valueOf(jtDatos.getValueAt(i, 10));
+            String ConCond = String.valueOf(jtDatos.getValueAt(i, 11));
+            String Reserva = String.valueOf(jtDatos.getValueAt(i, 12));
+            info[0]= Id;
+            info[1]= Cate;
+            info[2]= FecRec;
+            info[3]= UbiRec;
+            info[4]= UbiEnt;
+            info[5]= FecEntTemp;
+            info[6]= FecEntTar;
+            info[7]= UsuCli;
+            info[8]= ConCli;
+            info[9]= CondEx;
+            info[10]= UsuCond;
+            info[11]= ConCond;
+            info[12]= Reserva;
+            
+            if (Id.equals(IdResTf.getText())) {
+                datoRese = info.clone();
+                info[12] = "No";
+            }
+            nuevTabl.addRow(info);
+        }
+        this.jtDatos.setModel(nuevTabl);
+        if (archivoAlquileres.getName().endsWith("xls") || archivoAlquileres.getName().endsWith("xlsx")) {
+            modeloE.Exportar(archivoAlquileres, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        }
+        String nombreArchivo = "Vehiculos.xlsx";
+        File archivo1 = new File(nombreArchivo);
+        if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
+            modeloE.Importar(archivo1, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        }
+        String[] info1=new String[7];
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
+            String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
+            String Color = String.valueOf(jtDatos.getValueAt(i, 2));
+            String Trans = String.valueOf(jtDatos.getValueAt(i, 3));
+            String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
+            String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
+            String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
+            info1[0]=Placa;
+            info1[1]=Marca;
+            info1[2]=Color;
+            info1[3]=Trans;
+            info1[4]=Cate;
+            info1[5]=Numse;
+            info1[6]=IdAlqu;
+            String CateRese = (datoRese != null) ? datoRese[1] : null;
+            if (Cate.equals(CateRese)&&IdAlqu.equals("0")){
+                info1[6] = datoRese[0];
+                datoRese = null;
+                JOptionPane.showMessageDialog(null, "El carro de alquiler tiene la placa " + Placa);
+            }
+            nuevTabl1.addRow(info1);
+        }
+        if (datoRese == null) {
+            this.jtDatos.setModel(nuevTabl1);
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+            if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
+                modeloE.Exportar(archivo1, jtDatos);
+            } else {
+                JOptionPane.showMessageDialog(null, "Elija un formato válido.");
+            }
+            Empleado ventaEmpl = new Empleado();
+            ventaEmpl.setVisible(true);
+            ventaEmpl.setLocationRelativeTo(null);
+            this.setVisible(false);
+        } else{
+            nuevTabl1=new DefaultTableModel();
+            nuevTabl.addColumn("Placa");
+            nuevTabl.addColumn("Marca");
+            nuevTabl.addColumn("Color");
+            nuevTabl.addColumn("Transmisión");
+            nuevTabl.addColumn("Categoría");
+            nuevTabl.addColumn("Número de sede");
+            nuevTabl.addColumn("Id Alquiler");
+            for (int i=0; i<jtDatos.getRowCount(); i++){
+                String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
+                String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
+                String Color = String.valueOf(jtDatos.getValueAt(i, 2));
+                String Trans = String.valueOf(jtDatos.getValueAt(i, 3));
+                String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
+                String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
+                String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
+                info1[0]=Placa;
+                info1[1]=Marca;
+                info1[2]=Color;
+                info1[3]=Trans;
+                info1[4]=Cate;
+                info1[5]=Numse;
+                info1[6]=IdAlqu;
+                if (Cate.equals("0")&&datoRese!=null){
+                    info1[6] = datoRese[0];
+                    datoRese = null;
+                    JOptionPane.showMessageDialog(null, "El carro de alquiler tiene la placa " + Placa);
+                }
+                nuevTabl1.addRow(info1);
+            }
+            this.jtDatos.setModel(nuevTabl1);
+            if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
+                modeloE.Exportar(archivo1, jtDatos); // Elimina la línea que muestra el mensaje
+            } else {
+                JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+            }
+            Empleado ventaEmpl = new Empleado();
+            ventaEmpl.setVisible(true);
+            ventaEmpl.setLocationRelativeTo(null);
+            this.setVisible(false);
+            }
+    }//GEN-LAST:event_FormAlquBtnActionPerformed
+
+    private void IdResTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdResTfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_IdResTfActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         Empleado ventaEmpl = new Empleado();
@@ -135,11 +328,13 @@ public class FormAlqu extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton IniSesionBtn;
+    private javax.swing.JButton FormAlquBtn;
+    private javax.swing.JTextField IdResTf;
     private javax.swing.JButton VolverBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jtDatos;
     // End of variables declaration//GEN-END:variables
 }

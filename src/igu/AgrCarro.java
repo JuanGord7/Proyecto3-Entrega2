@@ -27,6 +27,7 @@ public class AgrCarro extends javax.swing.JFrame {
         nuevTabl.addColumn("Transmisión");
         nuevTabl.addColumn("Categoría");
         nuevTabl.addColumn("Número de sede");
+        nuevTabl.addColumn("Id Alquiler");
     }
 
     /**
@@ -288,7 +289,7 @@ public class AgrCarro extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
-        String []info=new String[6];
+        String []info=new String[7];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
             String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
@@ -296,12 +297,14 @@ public class AgrCarro extends javax.swing.JFrame {
             String Trans = String.valueOf(jtDatos.getValueAt(i, 3));
             String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
             String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
+            String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
             info[0]=Placa;
             info[1]=Marca;
             info[2]=Color;
             info[3]=Trans;
             info[4]=Cate;
             info[5]=Numse;
+            info[6]=IdAlqu;
             nuevTabl.addRow(info);
         }
         info[0]=PlacaTf.getText();
@@ -310,6 +313,7 @@ public class AgrCarro extends javax.swing.JFrame {
         info[3]=TransTf.getText();
         info[4]=CateTf.getText();
         info[5]=NumSeTf.getText();
+        info[6]="0";
         nuevTabl.addRow(info);
         this.jtDatos.setModel(nuevTabl);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
