@@ -47,23 +47,23 @@ public class CreaAlqu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        CreaAlquLb = new javax.swing.JLabel();
+        CateLb = new javax.swing.JLabel();
         CateTf = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        FechRecLb = new javax.swing.JLabel();
         FecRecTf = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        UbiRecLb = new javax.swing.JLabel();
+        UbiEntLb = new javax.swing.JLabel();
         FecEntTemTf = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        FecEntTarLb = new javax.swing.JLabel();
+        FecEnTemLb = new javax.swing.JLabel();
         FecEntTarTf = new javax.swing.JTextField();
         CreAlquBtn = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        UsuCliLb = new javax.swing.JLabel();
+        ConCliLb = new javax.swing.JLabel();
+        CondExLb = new javax.swing.JLabel();
+        ConCondLb = new javax.swing.JLabel();
+        UsuCondLb = new javax.swing.JLabel();
         UsuCliTf = new javax.swing.JTextField();
         CondExtTf = new javax.swing.JTextField();
         UsuCondTf = new javax.swing.JTextField();
@@ -77,56 +77,32 @@ public class CreaAlqu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Crear Alquiler");
+        CreaAlquLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        CreaAlquLb.setText("Crear Alquiler");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Categoría:");
+        CateLb.setBackground(new java.awt.Color(255, 255, 255));
+        CateLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        CateLb.setText("Categoría:");
 
-        CateTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CateTfActionPerformed(evt);
-            }
-        });
+        FechRecLb.setBackground(new java.awt.Color(255, 255, 255));
+        FechRecLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        FechRecLb.setText("Fecha Recogida(DD/MM/AA):");
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel3.setText("Fecha Recogida(DD/MM/AA):");
+        UbiRecLb.setBackground(new java.awt.Color(255, 255, 255));
+        UbiRecLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        UbiRecLb.setText("Ubicación Recogida:");
 
-        FecRecTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FecRecTfActionPerformed(evt);
-            }
-        });
+        UbiEntLb.setBackground(new java.awt.Color(255, 255, 255));
+        UbiEntLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        UbiEntLb.setText("Ubicación Entrega:");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel4.setText("Ubicación Recogida:");
+        FecEntTarLb.setBackground(new java.awt.Color(255, 255, 255));
+        FecEntTarLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        FecEntTarLb.setText("Fecha Entrega Tarde(DD/MM/AA):");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel5.setText("Ubicación Entrega:");
-
-        FecEntTemTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FecEntTemTfActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel6.setText("Fecha Entrega Tarde(DD/MM/AA):");
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel7.setText("Fecha Entrega Temprano(DD/MM/AA):");
-
-        FecEntTarTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FecEntTarTfActionPerformed(evt);
-            }
-        });
+        FecEnTemLb.setBackground(new java.awt.Color(255, 255, 255));
+        FecEnTemLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        FecEnTemLb.setText("Fecha Entrega Temprano(DD/MM/AA):");
 
         CreAlquBtn.setBackground(new java.awt.Color(0, 0, 0));
         CreAlquBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,43 +113,25 @@ public class CreaAlqu extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel8.setText("Usuario Cliente:");
+        UsuCliLb.setBackground(new java.awt.Color(255, 255, 255));
+        UsuCliLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        UsuCliLb.setText("Usuario Cliente:");
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel9.setText("Contraseña Cliente:");
+        ConCliLb.setBackground(new java.awt.Color(255, 255, 255));
+        ConCliLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        ConCliLb.setText("Contraseña Cliente:");
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel10.setText("Conductores extra:");
+        CondExLb.setBackground(new java.awt.Color(255, 255, 255));
+        CondExLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        CondExLb.setText("Conductores extra:");
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel11.setText("Contraseña del conductor:");
+        ConCondLb.setBackground(new java.awt.Color(255, 255, 255));
+        ConCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        ConCondLb.setText("Contraseña del conductor:");
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel12.setText("Usuario del conductor:");
-
-        UsuCliTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuCliTfActionPerformed(evt);
-            }
-        });
-
-        CondExtTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CondExtTfActionPerformed(evt);
-            }
-        });
-
-        UsuCondTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuCondTfActionPerformed(evt);
-            }
-        });
+        UsuCondLb.setBackground(new java.awt.Color(255, 255, 255));
+        UsuCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        UsuCondLb.setText("Usuario del conductor:");
 
         jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -195,11 +153,6 @@ public class CreaAlqu extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jtDatos);
 
         UbiRecJcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir" }));
-        UbiRecJcb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UbiRecJcbActionPerformed(evt);
-            }
-        });
 
         UbiEntJcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir" }));
 
@@ -221,17 +174,17 @@ public class CreaAlqu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel6))
+                            .addComponent(UbiEntLb)
+                            .addComponent(CateLb)
+                            .addComponent(FechRecLb)
+                            .addComponent(UbiRecLb)
+                            .addComponent(FecEnTemLb)
+                            .addComponent(UsuCliLb)
+                            .addComponent(ConCliLb)
+                            .addComponent(CondExLb)
+                            .addComponent(ConCondLb)
+                            .addComponent(UsuCondLb)
+                            .addComponent(FecEntTarLb))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FecEntTarTf)
@@ -254,7 +207,7 @@ public class CreaAlqu extends javax.swing.JFrame {
                         .addGap(33, 33, 33))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(CreaAlquLb)
                 .addGap(192, 192, 192))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -266,50 +219,50 @@ public class CreaAlqu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreaAlquLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(CateLb)
                     .addComponent(CateTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(FechRecLb)
                     .addComponent(FecRecTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UbiRecJcb, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(UbiRecLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UbiEntJcb, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(UbiEntLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FecEntTemTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(FecEnTemLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FecEntTarTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(FecEntTarLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UsuCliTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(UsuCliLb))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConCliPf, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(ConCliLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CondExtTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(CondExLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
+                    .addComponent(UsuCondLb)
                     .addComponent(UsuCondTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
+                    .addComponent(ConCondLb)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(ConCondPf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -342,27 +295,11 @@ public class CreaAlqu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CateTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CateTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CateTfActionPerformed
-
-    private void FecRecTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FecRecTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FecRecTfActionPerformed
-
-    private void FecEntTemTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FecEntTemTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FecEntTemTfActionPerformed
-
-    private void FecEntTarTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FecEntTarTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FecEntTarTfActionPerformed
-
     private void CreAlquBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreAlquBtnActionPerformed
         String nombreArchivo = "Alquileres.xlsx";
         File archivo = new File(nombreArchivo);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Importar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -412,7 +349,7 @@ public class CreaAlqu extends javax.swing.JFrame {
         nuevTabl.addRow(info);
         this.jtDatos.setModel(nuevTabl);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Exportar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -422,22 +359,6 @@ public class CreaAlqu extends javax.swing.JFrame {
         ventaEmpl.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_CreAlquBtnActionPerformed
-
-    private void UsuCliTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuCliTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuCliTfActionPerformed
-
-    private void CondExtTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CondExtTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CondExtTfActionPerformed
-
-    private void UsuCondTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuCondTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuCondTfActionPerformed
-
-    private void UbiRecJcbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UbiRecJcbActionPerformed
-        
-    }//GEN-LAST:event_UbiRecJcbActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         Empleado ventaEmpl = new Empleado();
@@ -450,7 +371,7 @@ public class CreaAlqu extends javax.swing.JFrame {
         String nombreArchivo = "Sedes.xlsx";
         File archivo = new File(nombreArchivo);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Importar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -461,31 +382,31 @@ public class CreaAlqu extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CateLb;
     private javax.swing.JTextField CateTf;
+    private javax.swing.JLabel ConCliLb;
     private javax.swing.JPasswordField ConCliPf;
+    private javax.swing.JLabel ConCondLb;
     private javax.swing.JPasswordField ConCondPf;
+    private javax.swing.JLabel CondExLb;
     private javax.swing.JTextField CondExtTf;
     private javax.swing.JButton CreAlquBtn;
+    private javax.swing.JLabel CreaAlquLb;
+    private javax.swing.JLabel FecEnTemLb;
+    private javax.swing.JLabel FecEntTarLb;
     private javax.swing.JTextField FecEntTarTf;
     private javax.swing.JTextField FecEntTemTf;
     private javax.swing.JTextField FecRecTf;
+    private javax.swing.JLabel FechRecLb;
     private javax.swing.JComboBox<String> UbiEntJcb;
+    private javax.swing.JLabel UbiEntLb;
     private javax.swing.JComboBox<String> UbiRecJcb;
+    private javax.swing.JLabel UbiRecLb;
+    private javax.swing.JLabel UsuCliLb;
     private javax.swing.JTextField UsuCliTf;
+    private javax.swing.JLabel UsuCondLb;
     private javax.swing.JTextField UsuCondTf;
     private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;

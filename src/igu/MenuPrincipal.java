@@ -26,7 +26,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        MenuLb = new javax.swing.JLabel();
         IniSesionBtn = new javax.swing.JButton();
         RegCliBtn = new javax.swing.JButton();
         SalAppBtn = new javax.swing.JButton();
@@ -36,8 +36,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 18)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Menú Principal");
+        MenuLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        MenuLb.setText("Menú Principal");
 
         IniSesionBtn.setBackground(new java.awt.Color(0, 0, 0));
         IniSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,7 +72,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addComponent(jLabel1)
+                .addComponent(MenuLb)
                 .addContainerGap(64, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -86,7 +86,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(MenuLb)
                 .addGap(18, 18, 18)
                 .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -134,9 +134,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IniSesionBtn;
+    private javax.swing.JLabel MenuLb;
     private javax.swing.JButton RegCliBtn;
     private javax.swing.JButton SalAppBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

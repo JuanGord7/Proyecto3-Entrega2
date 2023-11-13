@@ -58,8 +58,8 @@ public class FormAlqu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         FormAlquBtn = new javax.swing.JButton();
         IdResTf = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        IdResLb = new javax.swing.JLabel();
+        FormAlqLb = new javax.swing.JLabel();
         VolverBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtDatos = new javax.swing.JTable();
@@ -75,18 +75,12 @@ public class FormAlqu extends javax.swing.JFrame {
             }
         });
 
-        IdResTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdResTfActionPerformed(evt);
-            }
-        });
+        IdResLb.setBackground(new java.awt.Color(255, 255, 255));
+        IdResLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        IdResLb.setText("Id reserva:");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Id reserva:");
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Formalizar Alquiler");
+        FormAlqLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        FormAlqLb.setText("Formalizar Alquiler");
 
         VolverBtn.setBackground(new java.awt.Color(0, 0, 0));
         VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,7 +118,7 @@ public class FormAlqu extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(FormAlqLb)
                         .addGap(49, 49, 49))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -133,7 +127,7 @@ public class FormAlqu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(VolverBtn))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(IdResLb)
                                 .addGap(18, 18, 18)
                                 .addComponent(IdResTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(30, 30, 30))))
@@ -147,10 +141,10 @@ public class FormAlqu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FormAlqLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(IdResLb)
                     .addComponent(IdResTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -315,10 +309,6 @@ public class FormAlqu extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_FormAlquBtnActionPerformed
 
-    private void IdResTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdResTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdResTfActionPerformed
-
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         Empleado ventaEmpl = new Empleado();
         ventaEmpl.setVisible(true);
@@ -328,11 +318,11 @@ public class FormAlqu extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FormAlqLb;
     private javax.swing.JButton FormAlquBtn;
+    private javax.swing.JLabel IdResLb;
     private javax.swing.JTextField IdResTf;
     private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;

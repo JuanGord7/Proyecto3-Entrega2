@@ -40,12 +40,12 @@ public class AgrCarro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        AgrCarLb = new javax.swing.JLabel();
+        PlacaLb = new javax.swing.JLabel();
         PlacaTf = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        MarcaLb = new javax.swing.JLabel();
         MarcaTf = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        ColorLb = new javax.swing.JLabel();
         ColorTf = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         TransTf = new javax.swing.JTextField();
@@ -60,54 +60,24 @@ public class AgrCarro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Agregar Carro");
+        AgrCarLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        AgrCarLb.setText("Agregar Carro");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Placa:");
+        PlacaLb.setBackground(new java.awt.Color(255, 255, 255));
+        PlacaLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        PlacaLb.setText("Placa:");
 
-        PlacaTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PlacaTfActionPerformed(evt);
-            }
-        });
+        MarcaLb.setBackground(new java.awt.Color(255, 255, 255));
+        MarcaLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        MarcaLb.setText("Marca:");
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel3.setText("Marca:");
-
-        MarcaTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MarcaTfActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel4.setText("Color:");
-
-        ColorTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ColorTfActionPerformed(evt);
-            }
-        });
+        ColorLb.setBackground(new java.awt.Color(255, 255, 255));
+        ColorLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        ColorLb.setText("Color:");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel5.setText("Transmisión:");
-
-        TransTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TransTfActionPerformed(evt);
-            }
-        });
-
-        NumSeTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NumSeTfActionPerformed(evt);
-            }
-        });
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -116,12 +86,6 @@ public class AgrCarro extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel7.setText("Número de sede:");
-
-        CateTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CateTfActionPerformed(evt);
-            }
-        });
 
         AgrCarroBtn.setBackground(new java.awt.Color(0, 0, 0));
         AgrCarroBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,9 +141,9 @@ public class AgrCarro extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
+                                    .addComponent(PlacaLb)
+                                    .addComponent(MarcaLb)
+                                    .addComponent(ColorLb)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel6))
                                 .addGap(18, 18, 18)
@@ -192,7 +156,7 @@ public class AgrCarro extends javax.swing.JFrame {
                                     .addComponent(NumSeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(82, 82, 82)
-                                .addComponent(jLabel1)))))
+                                .addComponent(AgrCarLb)))))
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -204,19 +168,19 @@ public class AgrCarro extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AgrCarLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(PlacaLb)
                     .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(MarcaLb)
                     .addComponent(MarcaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ColorTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(ColorLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
@@ -257,35 +221,11 @@ public class AgrCarro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ColorTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ColorTfActionPerformed
-
-    private void PlacaTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlacaTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PlacaTfActionPerformed
-
-    private void TransTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TransTfActionPerformed
-
-    private void MarcaTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MarcaTfActionPerformed
-
-    private void NumSeTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumSeTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NumSeTfActionPerformed
-
-    private void CateTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CateTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CateTfActionPerformed
-
     private void AgrCarroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgrCarroBtnActionPerformed
         String nombreArchivo = "Vehiculos.xlsx";
         File archivo = new File(nombreArchivo);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Importar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -317,7 +257,7 @@ public class AgrCarro extends javax.swing.JFrame {
         nuevTabl.addRow(info);
         this.jtDatos.setModel(nuevTabl);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Exportar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -336,18 +276,18 @@ public class AgrCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AgrCarLb;
     private javax.swing.JButton AgrCarroBtn;
     private javax.swing.JTextField CateTf;
+    private javax.swing.JLabel ColorLb;
     private javax.swing.JTextField ColorTf;
+    private javax.swing.JLabel MarcaLb;
     private javax.swing.JTextField MarcaTf;
     private javax.swing.JTextField NumSeTf;
+    private javax.swing.JLabel PlacaLb;
     private javax.swing.JTextField PlacaTf;
     private javax.swing.JTextField TransTf;
     private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

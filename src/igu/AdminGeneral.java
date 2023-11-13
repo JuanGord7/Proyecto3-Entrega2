@@ -27,7 +27,7 @@ public class AdminGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        AdminGenLb = new javax.swing.JLabel();
         AgrCarroBtn = new javax.swing.JButton();
         ElimCarroBtn = new javax.swing.JButton();
         CreaSedeBtn = new javax.swing.JButton();
@@ -41,8 +41,8 @@ public class AdminGeneral extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(269, 300));
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Administrador General");
+        AdminGenLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        AdminGenLb.setText("Administrador General");
 
         AgrCarroBtn.setBackground(new java.awt.Color(0, 0, 0));
         AgrCarroBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,7 +124,7 @@ public class AdminGeneral extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jLabel1))
+                        .addComponent(AdminGenLb))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -148,7 +148,7 @@ public class AdminGeneral extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AdminGenLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AgrCarroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -245,6 +245,7 @@ public class AdminGeneral extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdminBtn;
+    private javax.swing.JLabel AdminGenLb;
     private javax.swing.JButton AgrCarroBtn;
     private javax.swing.JButton CerrSesiBtn;
     private javax.swing.JButton CreaSedeBtn;
@@ -252,7 +253,6 @@ public class AdminGeneral extends javax.swing.JFrame {
     private javax.swing.JButton HistVehBtn;
     private javax.swing.JButton ModSedeBtn;
     private javax.swing.JButton UbiVehBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

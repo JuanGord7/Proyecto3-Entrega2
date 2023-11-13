@@ -27,7 +27,7 @@ public class Cliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        ClienteLb = new javax.swing.JLabel();
         CreaReseBtn = new javax.swing.JButton();
         ModReseBtn = new javax.swing.JButton();
         CerrSesiBtn = new javax.swing.JButton();
@@ -36,8 +36,8 @@ public class Cliente extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(269, 300));
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Cliente");
+        ClienteLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        ClienteLb.setText("Cliente");
 
         CreaReseBtn.setBackground(new java.awt.Color(0, 0, 0));
         CreaReseBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,14 +80,14 @@ public class Cliente extends javax.swing.JFrame {
                             .addComponent(CreaReseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addComponent(jLabel1)))
+                        .addComponent(ClienteLb)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ClienteLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreaReseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -135,9 +135,9 @@ public class Cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CerrSesiBtn;
+    private javax.swing.JLabel ClienteLb;
     private javax.swing.JButton CreaReseBtn;
     private javax.swing.JButton ModReseBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

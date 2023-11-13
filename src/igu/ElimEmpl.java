@@ -39,8 +39,8 @@ public class ElimEmpl extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         ElimEmplBtn = new javax.swing.JButton();
         UsuTf = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        UsuLb = new javax.swing.JLabel();
+        ElimEmpLb = new javax.swing.JLabel();
         VolverBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtDatos = new javax.swing.JTable();
@@ -56,18 +56,12 @@ public class ElimEmpl extends javax.swing.JFrame {
             }
         });
 
-        UsuTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuTfActionPerformed(evt);
-            }
-        });
+        UsuLb.setBackground(new java.awt.Color(255, 255, 255));
+        UsuLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        UsuLb.setText("Usuario:");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Usuario:");
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Eliminar Empleado");
+        ElimEmpLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        ElimEmpLb.setText("Eliminar Empleado");
 
         VolverBtn.setBackground(new java.awt.Color(0, 0, 0));
         VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +99,7 @@ public class ElimEmpl extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(ElimEmpLb)
                         .addGap(61, 61, 61))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -114,7 +108,7 @@ public class ElimEmpl extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(VolverBtn))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(UsuLb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(UsuTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(36, 36, 36))))
@@ -128,11 +122,11 @@ public class ElimEmpl extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ElimEmpLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(UsuTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(UsuLb))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ElimEmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,7 +157,7 @@ public class ElimEmpl extends javax.swing.JFrame {
         String nombreArchivo = "Datos.xlsx";
         File archivo = new File(nombreArchivo);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Importar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -185,7 +179,7 @@ public class ElimEmpl extends javax.swing.JFrame {
         }
         this.jtDatos.setModel(nuevTabl);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Exportar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(this, "Elija un formato valido.");
         }
@@ -196,10 +190,6 @@ public class ElimEmpl extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ElimEmplBtnActionPerformed
 
-    private void UsuTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuTfActionPerformed
-
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         AdminLocal ventaAdminLoc = new AdminLocal();
         ventaAdminLoc.setVisible(true);
@@ -209,11 +199,11 @@ public class ElimEmpl extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ElimEmpLb;
     private javax.swing.JButton ElimEmplBtn;
+    private javax.swing.JLabel UsuLb;
     private javax.swing.JTextField UsuTf;
     private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;

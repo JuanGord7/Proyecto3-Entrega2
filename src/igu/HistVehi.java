@@ -27,34 +27,28 @@ public class HistVehi extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        IniSesionBtn = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        HistBtn = new javax.swing.JButton();
+        PlaTf = new javax.swing.JTextField();
+        PlaLb = new javax.swing.JLabel();
+        HistVehLb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        IniSesionBtn.setBackground(new java.awt.Color(0, 0, 0));
-        IniSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
-        IniSesionBtn.setText("Buscar Historial del Vehículo");
-        IniSesionBtn.addActionListener(new java.awt.event.ActionListener() {
+        HistBtn.setBackground(new java.awt.Color(0, 0, 0));
+        HistBtn.setForeground(new java.awt.Color(255, 255, 255));
+        HistBtn.setText("Buscar Historial del Vehículo");
+        HistBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IniSesionBtnActionPerformed(evt);
+                HistBtnActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
+        PlaLb.setBackground(new java.awt.Color(255, 255, 255));
+        PlaLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        PlaLb.setText("Placa:");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Placa:");
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Historial Vehículo ");
+        HistVehLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        HistVehLb.setText("Historial Vehículo ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -63,25 +57,25 @@ public class HistVehi extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IniSesionBtn)
-                    .addComponent(jLabel1)
+                    .addComponent(HistBtn)
+                    .addComponent(HistVehLb)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(PlaLb)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(PlaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HistVehLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(PlaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PlaLb))
                 .addGap(18, 18, 18)
-                .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -99,22 +93,15 @@ public class HistVehi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IniSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniSesionBtnActionPerformed
-        IniSesion ventaIniSesion = new IniSesion();
-        ventaIniSesion.setVisible(true);
-        ventaIniSesion.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }//GEN-LAST:event_IniSesionBtnActionPerformed
+    private void HistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistBtnActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_HistBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton IniSesionBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton HistBtn;
+    private javax.swing.JLabel HistVehLb;
+    private javax.swing.JLabel PlaLb;
+    private javax.swing.JTextField PlaTf;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
