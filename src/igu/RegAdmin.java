@@ -37,10 +37,10 @@ public class RegAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        RegAdmLb = new javax.swing.JLabel();
+        NomUsuLb = new javax.swing.JLabel();
+        ConLb = new javax.swing.JLabel();
+        NumSedLb = new javax.swing.JLabel();
         UsuTf = new javax.swing.JTextField();
         RegAdmBtn = new javax.swing.JButton();
         NumSeTf = new javax.swing.JTextField();
@@ -51,26 +51,20 @@ public class RegAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Registrar Administrador");
+        RegAdmLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        RegAdmLb.setText("Registrar Administrador");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Nombre de usuario:");
+        NomUsuLb.setBackground(new java.awt.Color(255, 255, 255));
+        NomUsuLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        NomUsuLb.setText("Nombre de usuario:");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel4.setText("Contraseña:");
+        ConLb.setBackground(new java.awt.Color(255, 255, 255));
+        ConLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        ConLb.setText("Contraseña:");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel5.setText("Número de sede:");
-
-        UsuTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuTfActionPerformed(evt);
-            }
-        });
+        NumSedLb.setBackground(new java.awt.Color(255, 255, 255));
+        NumSedLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        NumSedLb.setText("Número de sede:");
 
         RegAdmBtn.setBackground(new java.awt.Color(0, 0, 0));
         RegAdmBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,12 +72,6 @@ public class RegAdmin extends javax.swing.JFrame {
         RegAdmBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegAdmBtnActionPerformed(evt);
-            }
-        });
-
-        NumSeTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NumSeTfActionPerformed(evt);
             }
         });
 
@@ -123,7 +111,7 @@ public class RegAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(jLabel1))
+                        .addComponent(RegAdmLb))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,9 +121,9 @@ public class RegAdmin extends javax.swing.JFrame {
                                 .addComponent(RegAdmBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(NomUsuLb, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ConLb, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(NumSedLb, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(UsuTf, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
@@ -152,18 +140,18 @@ public class RegAdmin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegAdmLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(NomUsuLb)
                     .addComponent(UsuTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConPf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(ConLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addComponent(NumSedLb)
                     .addComponent(NumSeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -191,15 +179,11 @@ public class RegAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UsuTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuTfActionPerformed
-
     private void RegAdmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAdmBtnActionPerformed
         String nombreArchivo = "Datos.xlsx";
         File archivo = new File(nombreArchivo);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Importar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -222,7 +206,7 @@ public class RegAdmin extends javax.swing.JFrame {
         nuevTabl.addRow(info);
         this.jtDatos.setModel(nuevTabl);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Exportar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -232,10 +216,6 @@ public class RegAdmin extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_RegAdmBtnActionPerformed
 
-    private void NumSeTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumSeTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NumSeTfActionPerformed
-
     private void RegAdmBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAdmBtn1ActionPerformed
         AdminGeneral ventaAdminGen = new AdminGeneral();
         ventaAdminGen.setVisible(true);
@@ -244,15 +224,15 @@ public class RegAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_RegAdmBtn1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ConLb;
     private javax.swing.JPasswordField ConPf;
+    private javax.swing.JLabel NomUsuLb;
     private javax.swing.JTextField NumSeTf;
+    private javax.swing.JLabel NumSedLb;
     private javax.swing.JButton RegAdmBtn;
     private javax.swing.JButton RegAdmBtn1;
+    private javax.swing.JLabel RegAdmLb;
     private javax.swing.JTextField UsuTf;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;

@@ -48,24 +48,24 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FecEntTemLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="IdResLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FecRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="UbiRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FecEntTarLb" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField5" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="FecRecTf" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="IdResTf" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="UbiRecTf" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="FecEntTemTf" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="FecEntTarTf" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                          <Component id="IniSesionBtn" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="ModResBtn" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="27" max="32767" attributes="0"/>
@@ -80,32 +80,32 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jTextField3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="IdResTf" min="-2" pref="27" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField5" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="FecRecLb" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FecRecTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="IdResLb" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UbiRecTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="UbiRecLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="FecEntTemLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="FecEntTemTf" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="FecEntTarTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="FecEntTarLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="IniSesionBtn" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="ModResBtn" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -120,7 +120,7 @@
             <Property name="text" type="java.lang.String" value="Modificar Reserva"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="IdResLb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -131,12 +131,9 @@
             <Property name="text" type="java.lang.String" value="Id Reserva:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="IdResTf">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="FecRecLb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -147,12 +144,9 @@
             <Property name="text" type="java.lang.String" value="Fecha Recogida:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="FecRecTf">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="UbiRecLb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -163,12 +157,9 @@
             <Property name="text" type="java.lang.String" value="Ubicaci&#xf3;n Recogida:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="UbiRecTf">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="FecEntTemLb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -179,17 +170,11 @@
             <Property name="text" type="java.lang.String" value="Fecha Entrega Temprano:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="FecEntTemTf">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="FecEntTarTf">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="FecEntTarLb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -200,7 +185,7 @@
             <Property name="text" type="java.lang.String" value="Fecha Entrega tarde:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="IniSesionBtn">
+        <Component class="javax.swing.JButton" name="ModResBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -211,7 +196,7 @@
             <Property name="text" type="java.lang.String" value="Modificar Reserva"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IniSesionBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModResBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

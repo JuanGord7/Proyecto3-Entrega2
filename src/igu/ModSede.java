@@ -38,10 +38,10 @@ public class ModSede extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        ModSedeLb = new javax.swing.JLabel();
+        NumSedLb = new javax.swing.JLabel();
+        HorALb = new javax.swing.JLabel();
+        HorCLb = new javax.swing.JLabel();
         NumTf = new javax.swing.JTextField();
         ModSedeBtn = new javax.swing.JButton();
         HorATf = new javax.swing.JTextField();
@@ -52,26 +52,20 @@ public class ModSede extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Modificar Sede");
+        ModSedeLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        ModSedeLb.setText("Modificar Sede");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Número de la sede:");
+        NumSedLb.setBackground(new java.awt.Color(255, 255, 255));
+        NumSedLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        NumSedLb.setText("Número de la sede:");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel4.setText("Hora de apertura:");
+        HorALb.setBackground(new java.awt.Color(255, 255, 255));
+        HorALb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        HorALb.setText("Hora de apertura:");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel5.setText("Hora de cierre:");
-
-        NumTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NumTfActionPerformed(evt);
-            }
-        });
+        HorCLb.setBackground(new java.awt.Color(255, 255, 255));
+        HorCLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        HorCLb.setText("Hora de cierre:");
 
         ModSedeBtn.setBackground(new java.awt.Color(0, 0, 0));
         ModSedeBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,18 +73,6 @@ public class ModSede extends javax.swing.JFrame {
         ModSedeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModSedeBtnActionPerformed(evt);
-            }
-        });
-
-        HorATf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorATfActionPerformed(evt);
-            }
-        });
-
-        HorCTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HorCTfActionPerformed(evt);
             }
         });
 
@@ -131,9 +113,9 @@ public class ModSede extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(NumSedLb, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(HorALb, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(HorCLb, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(NumTf, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
@@ -148,7 +130,7 @@ public class ModSede extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(ModSedeLb)
                 .addGap(106, 106, 106))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -159,18 +141,18 @@ public class ModSede extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ModSedeLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(NumSedLb)
                     .addComponent(NumTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
+                    .addComponent(HorALb)
                     .addComponent(HorATf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addComponent(HorCLb)
                     .addComponent(HorCTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -198,15 +180,11 @@ public class ModSede extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NumTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NumTfActionPerformed
-
     private void ModSedeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModSedeBtnActionPerformed
         String nombreArchivo = "Sedes.xlsx";
         File archivo = new File(nombreArchivo);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Importar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -232,7 +210,7 @@ public class ModSede extends javax.swing.JFrame {
         }
         this.jtDatos.setModel(nuevTabl);
         if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+            modeloE.Exportar(archivo, jtDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
@@ -243,14 +221,6 @@ public class ModSede extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_ModSedeBtnActionPerformed
 
-    private void HorATfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorATfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorATfActionPerformed
-
-    private void HorCTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorCTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HorCTfActionPerformed
-
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         AdminGeneral ventaAdminGen = new AdminGeneral();
         ventaAdminGen.setVisible(true);
@@ -259,15 +229,15 @@ public class ModSede extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel HorALb;
     private javax.swing.JTextField HorATf;
+    private javax.swing.JLabel HorCLb;
     private javax.swing.JTextField HorCTf;
     private javax.swing.JButton ModSedeBtn;
+    private javax.swing.JLabel ModSedeLb;
+    private javax.swing.JLabel NumSedLb;
     private javax.swing.JTextField NumTf;
     private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;
