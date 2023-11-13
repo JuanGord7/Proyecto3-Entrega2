@@ -28,7 +28,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         IniSesionBtn = new javax.swing.JButton();
-        RegUsuBtn = new javax.swing.JButton();
+        RegCliBtn = new javax.swing.JButton();
         SalAppBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,12 +48,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        RegUsuBtn.setBackground(new java.awt.Color(0, 0, 0));
-        RegUsuBtn.setForeground(new java.awt.Color(255, 255, 255));
-        RegUsuBtn.setText("Registrar Usuario Nuevo");
-        RegUsuBtn.addActionListener(new java.awt.event.ActionListener() {
+        RegCliBtn.setBackground(new java.awt.Color(0, 0, 0));
+        RegCliBtn.setForeground(new java.awt.Color(255, 255, 255));
+        RegCliBtn.setText("Registrarse Como Cliente");
+        RegCliBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegUsuBtnActionPerformed(evt);
+                RegCliBtnActionPerformed(evt);
             }
         });
 
@@ -71,17 +71,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(RegUsuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SalAppBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addComponent(jLabel1)
+                .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(RegCliBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                    .addComponent(IniSesionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SalAppBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,11 +89,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RegUsuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(RegCliBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SalAppBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,12 +117,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_IniSesionBtnActionPerformed
 
-    private void RegUsuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegUsuBtnActionPerformed
-        RegUsuNuevo ventaRegUsuNuevo = new RegUsuNuevo();
-        ventaRegUsuNuevo.setVisible(true);
-        ventaRegUsuNuevo.setLocationRelativeTo(null);
+    private void RegCliBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegCliBtnActionPerformed
+        RegClie ventaRegClie = new RegClie();
+        ventaRegClie.setVisible(true);
+        ventaRegClie.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_RegUsuBtnActionPerformed
+    }//GEN-LAST:event_RegCliBtnActionPerformed
 
     private void SalAppBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalAppBtnActionPerformed
         System.exit(WIDTH);
@@ -135,7 +134,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IniSesionBtn;
-    private javax.swing.JButton RegUsuBtn;
+    private javax.swing.JButton RegCliBtn;
     private javax.swing.JButton SalAppBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

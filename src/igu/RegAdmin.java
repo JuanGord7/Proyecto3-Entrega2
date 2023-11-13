@@ -4,17 +4,27 @@
  */
 package igu;
 
+import java.io.File;
+import javax.swing.JOptionPane;
+import logica.ImportarExportar;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author jumag
  */
 public class RegAdmin extends javax.swing.JFrame {
-
+    ImportarExportar modeloE = new ImportarExportar();
+    DefaultTableModel nuevTabl;
     /**
      * Creates new form RegAdmin
      */
     public RegAdmin() {
         initComponents();
+        nuevTabl=new DefaultTableModel();
+        nuevTabl.addColumn("Usuario");
+        nuevTabl.addColumn("Contraseña");
+        nuevTabl.addColumn("Rol");
+        nuevTabl.addColumn("Sede");
     }
 
     /**
@@ -31,10 +41,13 @@ public class RegAdmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        IniSesionBtn = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        UsuTf = new javax.swing.JTextField();
+        RegAdmBtn = new javax.swing.JButton();
+        NumSeTf = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtDatos = new javax.swing.JTable();
+        ConPf = new javax.swing.JPasswordField();
+        RegAdmBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,30 +66,52 @@ public class RegAdmin extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel5.setText("Número de sede:");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        UsuTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                UsuTfActionPerformed(evt);
             }
         });
 
-        IniSesionBtn.setBackground(new java.awt.Color(0, 0, 0));
-        IniSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
-        IniSesionBtn.setText("Registrar administrador");
-        IniSesionBtn.addActionListener(new java.awt.event.ActionListener() {
+        RegAdmBtn.setBackground(new java.awt.Color(0, 0, 0));
+        RegAdmBtn.setForeground(new java.awt.Color(255, 255, 255));
+        RegAdmBtn.setText("Registrar administrador");
+        RegAdmBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IniSesionBtnActionPerformed(evt);
+                RegAdmBtnActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        NumSeTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                NumSeTfActionPerformed(evt);
             }
         });
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        jtDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Contraseña"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtDatos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jtDatos);
+
+        RegAdmBtn1.setBackground(new java.awt.Color(0, 0, 0));
+        RegAdmBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        RegAdmBtn1.setText("Volver");
+        RegAdmBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                RegAdmBtn1ActionPerformed(evt);
             }
         });
 
@@ -87,23 +122,31 @@ public class RegAdmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField6)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel1)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(RegAdmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RegAdmBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(UsuTf, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(NumSeTf)
+                                    .addComponent(ConPf))))))
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(354, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,18 +156,25 @@ public class RegAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ConPf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NumSeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(IniSesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegAdmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegAdmBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(243, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,34 +191,70 @@ public class RegAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void UsuTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuTfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_UsuTfActionPerformed
 
-    private void IniSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniSesionBtnActionPerformed
-        IniSesion ventaIniSesion = new IniSesion();
-        ventaIniSesion.setVisible(true);
-        ventaIniSesion.setLocationRelativeTo(null);
+    private void RegAdmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAdmBtnActionPerformed
+        String nombreArchivo = "Datos.xlsx";
+        File archivo = new File(nombreArchivo);
+        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
+            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        }
+        String []info=new String[4];
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            String Usuario = String.valueOf(jtDatos.getValueAt(i, 0));
+            String Contraseña = String.valueOf(jtDatos.getValueAt(i, 1));
+            String Rol = String.valueOf(jtDatos.getValueAt(i, 2));
+            String Sede = String.valueOf(jtDatos.getValueAt(i, 3));
+            info[0]=Usuario;
+            info[1]=Contraseña;
+            info[2]=Rol;
+            info[3]=Sede;
+            nuevTabl.addRow(info);
+        }
+        info[0]=UsuTf.getText();
+        info[1]=ConPf.getText();
+        info[2]="AdminLoc";
+        info[3]=NumSeTf.getText();
+        nuevTabl.addRow(info);
+        this.jtDatos.setModel(nuevTabl);
+        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
+            modeloE.Exportar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
+        } else {
+            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        }
+        AdminGeneral ventaAdminGen = new AdminGeneral();
+        ventaAdminGen.setVisible(true);
+        ventaAdminGen.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_IniSesionBtnActionPerformed
+    }//GEN-LAST:event_RegAdmBtnActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void NumSeTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumSeTfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_NumSeTfActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    private void RegAdmBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAdmBtn1ActionPerformed
+        AdminGeneral ventaAdminGen = new AdminGeneral();
+        ventaAdminGen.setVisible(true);
+        ventaAdminGen.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_RegAdmBtn1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton IniSesionBtn;
+    private javax.swing.JPasswordField ConPf;
+    private javax.swing.JTextField NumSeTf;
+    private javax.swing.JButton RegAdmBtn;
+    private javax.swing.JButton RegAdmBtn1;
+    private javax.swing.JTextField UsuTf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jtDatos;
     // End of variables declaration//GEN-END:variables
 }

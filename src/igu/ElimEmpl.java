@@ -24,6 +24,7 @@ public class ElimEmpl extends javax.swing.JFrame {
         nuevTabl.addColumn("Usuario");
         nuevTabl.addColumn("Contraseña");
         nuevTabl.addColumn("Rol");
+        nuevTabl.addColumn("Sede");
     }
 
     /**
@@ -166,14 +167,16 @@ public class ElimEmpl extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Elija un formato valido.");
         }
-        String []info=new String[3];
+        String []info=new String[4];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Usuario = String.valueOf(jtDatos.getValueAt(i, 0));
             String Contraseña = String.valueOf(jtDatos.getValueAt(i, 1));
             String Rol = String.valueOf(jtDatos.getValueAt(i, 2));
+            String Sede = String.valueOf(jtDatos.getValueAt(i, 3));
             info[0]=Usuario;
             info[1]=Contraseña;
             info[2]=Rol;
+            info[3]=Sede;
             if (UsuTf.getText().equals(Usuario)&&("Empleado".equals(Rol))){
                 JOptionPane.showMessageDialog(null, "Se ha eliminado el empleado del sistema.");
             } else{
