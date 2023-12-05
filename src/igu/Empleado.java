@@ -31,6 +31,7 @@ public class Empleado extends javax.swing.JFrame {
         FormAlquBtn = new javax.swing.JButton();
         CreaAlquBtn = new javax.swing.JButton();
         CerrSesiBtn = new javax.swing.JButton();
+        PagYEntBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +67,15 @@ public class Empleado extends javax.swing.JFrame {
             }
         });
 
+        PagYEntBtn.setBackground(new java.awt.Color(0, 0, 0));
+        PagYEntBtn.setForeground(new java.awt.Color(255, 255, 255));
+        PagYEntBtn.setText("Pagar y entregar");
+        PagYEntBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PagYEntBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -77,7 +87,8 @@ public class Empleado extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CreaAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CerrSesiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FormAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(FormAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PagYEntBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(EmplLb)))
@@ -90,11 +101,13 @@ public class Empleado extends javax.swing.JFrame {
                 .addComponent(EmplLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FormAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PagYEntBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreaAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CerrSesiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -105,7 +118,7 @@ public class Empleado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
         );
 
         pack();
@@ -132,12 +145,20 @@ public class Empleado extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_CerrSesiBtnActionPerformed
 
+    private void PagYEntBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagYEntBtnActionPerformed
+        PagYEnt ventaPagYEnt = new PagYEnt();
+        ventaPagYEnt.setVisible(true);
+        ventaPagYEnt.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_PagYEntBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CerrSesiBtn;
     private javax.swing.JButton CreaAlquBtn;
     private javax.swing.JLabel EmplLb;
     private javax.swing.JButton FormAlquBtn;
+    private javax.swing.JButton PagYEntBtn;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

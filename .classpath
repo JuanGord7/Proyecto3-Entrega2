@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src">
+		<attributes>
+			<attribute name="annotationpath" value="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/OneDrive/Documentos/DPO/iText - Crear PDF desde Java/iText - Crear PDF desde Java/iTextDemo/lib/iText-2.0.8.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/poi-ooxml-3.12-20150511.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/poi-excelant-3.12-20150511.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/poi-ooxml-schemas-3.12-20150511.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/poi-3.12-20150511.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/poi-scratchpad-3.12-20150511.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jumag/Downloads/Libreria Poi/poi-3.12/ooxml-lib/xmlbeans-2.6.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

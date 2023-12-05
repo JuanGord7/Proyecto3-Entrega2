@@ -8,6 +8,10 @@ import java.io.File;
 import javax.swing.*;
 import logica.ImportarExportar;
 import javax.swing.table.DefaultTableModel;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 /**
  *
  * @author jumag
@@ -26,14 +30,14 @@ public class CreaAlqu extends javax.swing.JFrame {
         nuevTabl.addColumn("Fecha recogida");
         nuevTabl.addColumn("Ubicación recogida");
         nuevTabl.addColumn("Ubicación entrega");
-        nuevTabl.addColumn("Fecha entrega temprano");
-        nuevTabl.addColumn("Fecha entrega Tarde");
+        nuevTabl.addColumn("Fecha entrega");
         nuevTabl.addColumn("Usuario cliente");
         nuevTabl.addColumn("Contraseña cliente");
         nuevTabl.addColumn("Conductores extra");
         nuevTabl.addColumn("Usuario del conductor");
         nuevTabl.addColumn("Contraseña del conductor");
         nuevTabl.addColumn("Reserva");
+        nuevTabl.addColumn("Precio");
         llenarComboBox();
     }
 
@@ -49,31 +53,33 @@ public class CreaAlqu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         CreaAlquLb = new javax.swing.JLabel();
         CateLb = new javax.swing.JLabel();
-        CateTf = new javax.swing.JTextField();
         FechRecLb = new javax.swing.JLabel();
         FecRecTf = new javax.swing.JTextField();
         UbiRecLb = new javax.swing.JLabel();
         UbiEntLb = new javax.swing.JLabel();
-        FecEntTemTf = new javax.swing.JTextField();
-        FecEntTarLb = new javax.swing.JLabel();
+        FecEntTf = new javax.swing.JTextField();
         FecEnTemLb = new javax.swing.JLabel();
-        FecEntTarTf = new javax.swing.JTextField();
         CreAlquBtn = new javax.swing.JButton();
         UsuCliLb = new javax.swing.JLabel();
         ConCliLb = new javax.swing.JLabel();
-        CondExLb = new javax.swing.JLabel();
+        NumConAdiLb = new javax.swing.JLabel();
         ConCondLb = new javax.swing.JLabel();
         UsuCondLb = new javax.swing.JLabel();
         UsuCliTf = new javax.swing.JTextField();
-        CondExtTf = new javax.swing.JTextField();
+        NumConAdiTf = new javax.swing.JTextField();
         UsuCondTf = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtDatos = new javax.swing.JTable();
         UbiRecJcb = new javax.swing.JComboBox<>();
         UbiEntJcb = new javax.swing.JComboBox<>();
         ConCliPf = new javax.swing.JPasswordField();
-        ConCondPf = new javax.swing.JPasswordField();
         VolverBtn = new javax.swing.JButton();
+        CatJcb = new javax.swing.JComboBox<>();
+        Seg1Lb = new javax.swing.JLabel();
+        Seg2Lb = new javax.swing.JLabel();
+        Seg1Jcb = new javax.swing.JComboBox<>();
+        Seg2Jcb = new javax.swing.JComboBox<>();
+        ConCondPf = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,13 +102,9 @@ public class CreaAlqu extends javax.swing.JFrame {
         UbiEntLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         UbiEntLb.setText("Ubicación Entrega:");
 
-        FecEntTarLb.setBackground(new java.awt.Color(255, 255, 255));
-        FecEntTarLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        FecEntTarLb.setText("Fecha Entrega Tarde(DD/MM/AA):");
-
         FecEnTemLb.setBackground(new java.awt.Color(255, 255, 255));
         FecEnTemLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        FecEnTemLb.setText("Fecha Entrega Temprano(DD/MM/AA):");
+        FecEnTemLb.setText("Fecha Entrega (DD/MM/AA):");
 
         CreAlquBtn.setBackground(new java.awt.Color(0, 0, 0));
         CreAlquBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,9 +123,9 @@ public class CreaAlqu extends javax.swing.JFrame {
         ConCliLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         ConCliLb.setText("Contraseña Cliente:");
 
-        CondExLb.setBackground(new java.awt.Color(255, 255, 255));
-        CondExLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        CondExLb.setText("Conductores extra:");
+        NumConAdiLb.setBackground(new java.awt.Color(255, 255, 255));
+        NumConAdiLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        NumConAdiLb.setText("Número conductores adicionales:");
 
         ConCondLb.setBackground(new java.awt.Color(255, 255, 255));
         ConCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -165,6 +167,20 @@ public class CreaAlqu extends javax.swing.JFrame {
             }
         });
 
+        CatJcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir" }));
+
+        Seg1Lb.setBackground(new java.awt.Color(255, 255, 255));
+        Seg1Lb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        Seg1Lb.setText("Seguro 1:");
+
+        Seg2Lb.setBackground(new java.awt.Color(255, 255, 255));
+        Seg2Lb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        Seg2Lb.setText("Seguro 2:");
+
+        Seg1Jcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
+
+        Seg2Jcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -172,8 +188,9 @@ public class CreaAlqu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Seg2Lb)
                             .addComponent(UbiEntLb)
                             .addComponent(CateLb)
                             .addComponent(FechRecLb)
@@ -181,34 +198,35 @@ public class CreaAlqu extends javax.swing.JFrame {
                             .addComponent(FecEnTemLb)
                             .addComponent(UsuCliLb)
                             .addComponent(ConCliLb)
-                            .addComponent(CondExLb)
+                            .addComponent(NumConAdiLb)
                             .addComponent(ConCondLb)
                             .addComponent(UsuCondLb)
-                            .addComponent(FecEntTarLb))
+                            .addComponent(Seg1Lb))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FecEntTarTf)
-                            .addComponent(FecEntTemTf)
-                            .addComponent(UsuCliTf)
-                            .addComponent(CondExtTf)
-                            .addComponent(UsuCondTf)
-                            .addComponent(UbiEntJcb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ConCliPf)
-                            .addComponent(ConCondPf)
-                            .addComponent(CateTf, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FecRecTf)
-                            .addComponent(UbiRecJcb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FecEntTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UsuCliTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NumConAdiTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UsuCondTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, 184, Short.MAX_VALUE)
+                            .addComponent(ConCliPf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FecRecTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UbiRecJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CatJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Seg1Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Seg2Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ConCondPf))
                         .addGap(15, 15, 15))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addComponent(CreAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CreaAlquLb)
-                .addGap(192, 192, 192))
+                .addGap(176, 176, 176))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -222,12 +240,16 @@ public class CreaAlqu extends javax.swing.JFrame {
                 .addComponent(CreaAlquLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CateLb)
-                    .addComponent(CateTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CatJcb, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CateLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechRecLb)
                     .addComponent(FecRecTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FecEntTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FecEnTemLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UbiRecJcb, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,14 +260,6 @@ public class CreaAlqu extends javax.swing.JFrame {
                     .addComponent(UbiEntLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FecEntTemTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FecEnTemLb))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FecEntTarTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FecEntTarLb))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UsuCliTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UsuCliLb))
                 .addGap(7, 7, 7)
@@ -254,23 +268,29 @@ public class CreaAlqu extends javax.swing.JFrame {
                     .addComponent(ConCliLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CondExtTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CondExLb))
+                    .addComponent(NumConAdiTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NumConAdiLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UsuCondLb)
                     .addComponent(UsuCondTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ConCondLb)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(ConCondPf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ConCondPf, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConCondLb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Seg1Lb)
+                    .addComponent(Seg1Jcb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Seg2Jcb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Seg2Lb))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CreAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
@@ -296,63 +316,98 @@ public class CreaAlqu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CreAlquBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreAlquBtnActionPerformed
-        String nombreArchivo = "Alquileres.xlsx";
-        File archivo = new File(nombreArchivo);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        String FecRec = FecRecTf.getText();
+        String FecEnt = FecEntTf.getText();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        long diferenciaEnDias = 0;
+        try {
+            Date date1 = formato.parse(FecRec);
+            Date date2 = formato.parse(FecEnt);
+
+            long diferenciaEnMillis = date2.getTime() - date1.getTime();
+
+            diferenciaEnDias = TimeUnit.MILLISECONDS.toDays(diferenciaEnMillis);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+        
+        String nombreArchivo = "Tarifas.xlsx";
+        File archivo = new File(nombreArchivo);
+        modeloE.Importar(archivo, jtDatos);
+        String tarifa;
+        long CalTar=0;
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            String Cat = String.valueOf(jtDatos.getValueAt(i, 0));
+            String TarDia = String.valueOf(jtDatos.getValueAt(i, 1));
+            String SedDif = String.valueOf(jtDatos.getValueAt(i, 2));
+            String Seg1 = String.valueOf(jtDatos.getValueAt(i, 3));
+            String Seg2 = String.valueOf(jtDatos.getValueAt(i, 4));
+            String ConAdi = String.valueOf(jtDatos.getValueAt(i, 5));
+            if (Cat.equals(CatJcb.getSelectedItem().toString())){
+                CalTar = Integer.parseInt(TarDia)*diferenciaEnDias+(Integer.parseInt(ConAdi)*Integer.parseInt(NumConAdiTf.getText()));
+                if (!UbiRecJcb.getSelectedItem().toString().equals(UbiEntJcb.getSelectedItem().toString())){
+                    CalTar += Integer.parseInt(SedDif);
+                }
+                if (Seg1Jcb.getSelectedItem().equals("Sí")){
+                    CalTar += Integer.parseInt(Seg1);
+                }
+                if (Seg2Jcb.getSelectedItem().equals("Sí")){
+                    CalTar += Integer.parseInt(Seg2);
+                }
+            }
+        }
+        
+        nombreArchivo = "Alquileres.xlsx";
+        archivo = new File(nombreArchivo);
+        modeloE.Importar(archivo, jtDatos);
         String []info=new String[13];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Id = String.valueOf(jtDatos.getValueAt(i, 0));
             String Cate = String.valueOf(jtDatos.getValueAt(i, 1));
-            String FecRec = String.valueOf(jtDatos.getValueAt(i, 2));
+            FecRec = String.valueOf(jtDatos.getValueAt(i, 2));
             String UbiRec = String.valueOf(jtDatos.getValueAt(i, 3));
             String UbiEnt = String.valueOf(jtDatos.getValueAt(i, 4));
-            String FecEntTemp = String.valueOf(jtDatos.getValueAt(i, 5));
-            String FecEntTar = String.valueOf(jtDatos.getValueAt(i, 6));
-            String UsuCli = String.valueOf(jtDatos.getValueAt(i, 7));
-            String ConCli = String.valueOf(jtDatos.getValueAt(i, 8));
-            String CondEx = String.valueOf(jtDatos.getValueAt(i, 9));
-            String UsuCond = String.valueOf(jtDatos.getValueAt(i, 10));
-            String ConCond = String.valueOf(jtDatos.getValueAt(i, 11));
-            String Reserva = String.valueOf(jtDatos.getValueAt(i, 12));
+            FecEnt = String.valueOf(jtDatos.getValueAt(i, 5));
+            String UsuCli = String.valueOf(jtDatos.getValueAt(i, 6));
+            String ConCli = String.valueOf(jtDatos.getValueAt(i, 7));
+            String CondEx = String.valueOf(jtDatos.getValueAt(i, 8));
+            String UsuCond = String.valueOf(jtDatos.getValueAt(i, 9));
+            String ConCond = String.valueOf(jtDatos.getValueAt(i, 10));
+            String Reserva = String.valueOf(jtDatos.getValueAt(i, 11));
+            String Pre = String.valueOf(jtDatos.getValueAt(i, 12));
             info[0]= Id;
             info[1]= Cate;
             info[2]= FecRec;
             info[3]= UbiRec;
             info[4]= UbiEnt;
-            info[5]= FecEntTemp;
-            info[6]= FecEntTar;
-            info[7]= UsuCli;
-            info[8]= ConCli;
-            info[9]= CondEx;
-            info[10]= UsuCond;
-            info[11]= ConCond;
-            info[12]= Reserva;
+            info[5]= FecEnt;
+            info[6]= UsuCli;
+            info[7]= ConCli;
+            info[8]= CondEx;
+            info[9]= UsuCond;
+            info[10]= ConCond;
+            info[11]= Reserva;
+            info[12]= Pre;
             nuevTabl.addRow(info);
         }
         info[0]= String.valueOf(nuevTabl.getRowCount()+1);
-        info[1]= CateTf.getText();
+        info[1]= CatJcb.getSelectedItem().toString();
         info[2]= FecRecTf.getText();
         info[3]= UbiRecJcb.getSelectedItem().toString();
         info[4]= UbiEntJcb.getSelectedItem().toString();
-        info[5]= FecEntTemTf.getText();
-        info[6]= FecEntTarTf.getText();
-        info[7]= UsuCliTf.getText();
-        info[8]= ConCliPf.getText();
-        info[9]= CondExtTf.getText();
-        info[10]= UsuCondTf.getText();
-        info[11]= ConCondPf.getText();
-        info[12]= "No";
+        info[5]= FecEntTf.getText();
+        info[6]= UsuCliTf.getText();
+        info[7]= ConCliPf.getText();
+        info[8]= NumConAdiTf.getText();
+        info[9]= UsuCondTf.getText();
+        info[10]= ConCondPf.getText();
+        info[11]= "No";
+        tarifa = String.valueOf(CalTar);
+        info[12]= tarifa;
         nuevTabl.addRow(info);
         this.jtDatos.setModel(nuevTabl);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
+        modeloE.Exportar(archivo, jtDatos);
         JOptionPane.showMessageDialog(null, "Ha agregado un alquiler al sistema.");
         Empleado ventaEmpl = new Empleado();
         ventaEmpl.setVisible(true);
@@ -368,13 +423,16 @@ public class CreaAlqu extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverBtnActionPerformed
 
     private void llenarComboBox() {
-        String nombreArchivo = "Sedes.xlsx";
+        String nombreArchivo = "Tarifas.xlsx";
         File archivo = new File(nombreArchivo);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
+        modeloE.Importar(archivo, jtDatos);
+        for (int i=0; i<jtDatos.getRowCount(); i++){
+            CatJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 0)));
         }
+        
+        nombreArchivo = "Sedes.xlsx";
+        archivo = new File(nombreArchivo);
+        modeloE.Importar(archivo, jtDatos);
         for (int i=0; i<jtDatos.getRowCount(); i++){
             UbiRecJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 1)));
             UbiEntJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 1)));
@@ -382,22 +440,24 @@ public class CreaAlqu extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CatJcb;
     private javax.swing.JLabel CateLb;
-    private javax.swing.JTextField CateTf;
     private javax.swing.JLabel ConCliLb;
     private javax.swing.JPasswordField ConCliPf;
     private javax.swing.JLabel ConCondLb;
     private javax.swing.JPasswordField ConCondPf;
-    private javax.swing.JLabel CondExLb;
-    private javax.swing.JTextField CondExtTf;
     private javax.swing.JButton CreAlquBtn;
     private javax.swing.JLabel CreaAlquLb;
     private javax.swing.JLabel FecEnTemLb;
-    private javax.swing.JLabel FecEntTarLb;
-    private javax.swing.JTextField FecEntTarTf;
-    private javax.swing.JTextField FecEntTemTf;
+    private javax.swing.JTextField FecEntTf;
     private javax.swing.JTextField FecRecTf;
     private javax.swing.JLabel FechRecLb;
+    private javax.swing.JLabel NumConAdiLb;
+    private javax.swing.JTextField NumConAdiTf;
+    private javax.swing.JComboBox<String> Seg1Jcb;
+    private javax.swing.JLabel Seg1Lb;
+    private javax.swing.JComboBox<String> Seg2Jcb;
+    private javax.swing.JLabel Seg2Lb;
     private javax.swing.JComboBox<String> UbiEntJcb;
     private javax.swing.JLabel UbiEntLb;
     private javax.swing.JComboBox<String> UbiRecJcb;

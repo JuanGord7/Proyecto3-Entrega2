@@ -28,14 +28,14 @@ public class FormAlqu extends javax.swing.JFrame {
         nuevTabl.addColumn("Fecha recogida");
         nuevTabl.addColumn("Ubicación recogida");
         nuevTabl.addColumn("Ubicación entrega");
-        nuevTabl.addColumn("Fecha entrega temprano");
-        nuevTabl.addColumn("Fecha entrega Tarde");
+        nuevTabl.addColumn("Fecha entrega");
         nuevTabl.addColumn("Usuario cliente");
         nuevTabl.addColumn("Contraseña cliente");
         nuevTabl.addColumn("Conductores extra");
         nuevTabl.addColumn("Usuario del conductor");
         nuevTabl.addColumn("Contraseña del conductor");
         nuevTabl.addColumn("Reserva");
+        nuevTabl.addColumn("Precio");
         nuevTabl1=new DefaultTableModel();
         nuevTabl1.addColumn("Placa");
         nuevTabl1.addColumn("Marca");
@@ -174,11 +174,7 @@ public class FormAlqu extends javax.swing.JFrame {
     private void FormAlquBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormAlquBtnActionPerformed
         String nombreArchivoAlquileres = "Alquileres.xlsx";
         File archivoAlquileres = new File(nombreArchivoAlquileres);
-        if (archivoAlquileres.getName().endsWith("xls") || archivoAlquileres.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivoAlquileres, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato válido para Alquileres.");
-        }
+        modeloE.Importar(archivoAlquileres, jtDatos);
 
         String[] datoRese = null;
         String[] info = new String[13];
@@ -188,47 +184,38 @@ public class FormAlqu extends javax.swing.JFrame {
             String FecRec = String.valueOf(jtDatos.getValueAt(i, 2));
             String UbiRec = String.valueOf(jtDatos.getValueAt(i, 3));
             String UbiEnt = String.valueOf(jtDatos.getValueAt(i, 4));
-            String FecEntTemp = String.valueOf(jtDatos.getValueAt(i, 5));
-            String FecEntTar = String.valueOf(jtDatos.getValueAt(i, 6));
-            String UsuCli = String.valueOf(jtDatos.getValueAt(i, 7));
-            String ConCli = String.valueOf(jtDatos.getValueAt(i, 8));
-            String CondEx = String.valueOf(jtDatos.getValueAt(i, 9));
-            String UsuCond = String.valueOf(jtDatos.getValueAt(i, 10));
-            String ConCond = String.valueOf(jtDatos.getValueAt(i, 11));
-            String Reserva = String.valueOf(jtDatos.getValueAt(i, 12));
+            String FecEnt = String.valueOf(jtDatos.getValueAt(i, 5));
+            String UsuCli = String.valueOf(jtDatos.getValueAt(i, 6));
+            String ConCli = String.valueOf(jtDatos.getValueAt(i, 7));
+            String CondEx = String.valueOf(jtDatos.getValueAt(i, 8));
+            String UsuCond = String.valueOf(jtDatos.getValueAt(i, 9));
+            String ConCond = String.valueOf(jtDatos.getValueAt(i, 10));
+            String Reserva = String.valueOf(jtDatos.getValueAt(i, 11));
+            String Pre = String.valueOf(jtDatos.getValueAt(i, 12));
             info[0]= Id;
             info[1]= Cate;
             info[2]= FecRec;
             info[3]= UbiRec;
             info[4]= UbiEnt;
-            info[5]= FecEntTemp;
-            info[6]= FecEntTar;
-            info[7]= UsuCli;
-            info[8]= ConCli;
-            info[9]= CondEx;
-            info[10]= UsuCond;
-            info[11]= ConCond;
-            info[12]= Reserva;
-            
+            info[5]= FecEnt;
+            info[6]= UsuCli;
+            info[7]= ConCli;
+            info[8]= CondEx;
+            info[9]= UsuCond;
+            info[10]= ConCond;
+            info[11]= Reserva;
+            info[12]= Pre;
             if (Id.equals(IdResTf.getText())) {
                 datoRese = info.clone();
-                info[12] = "No";
+                info[11] = "No";
             }
             nuevTabl.addRow(info);
         }
         this.jtDatos.setModel(nuevTabl);
-        if (archivoAlquileres.getName().endsWith("xls") || archivoAlquileres.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivoAlquileres, jtDatos); // Elimina la línea que muestra el mensaje
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
+        modeloE.Exportar(archivoAlquileres, jtDatos);
         String nombreArchivo = "Vehiculos.xlsx";
         File archivo1 = new File(nombreArchivo);
-        if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo1, jtDatos); // Elimina la línea que muestra el mensaje
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
+        modeloE.Importar(archivo1, jtDatos);
         String[] info1=new String[7];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
@@ -255,12 +242,8 @@ public class FormAlqu extends javax.swing.JFrame {
         }
         if (datoRese == null) {
             this.jtDatos.setModel(nuevTabl1);
-
-            if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
-                modeloE.Exportar(archivo1, jtDatos);
-            } else {
-                JOptionPane.showMessageDialog(null, "Elija un formato válido.");
-            }
+            modeloE.Exportar(archivo1, jtDatos);
+            
             Empleado ventaEmpl = new Empleado();
             ventaEmpl.setVisible(true);
             ventaEmpl.setLocationRelativeTo(null);
@@ -297,11 +280,8 @@ public class FormAlqu extends javax.swing.JFrame {
                 nuevTabl1.addRow(info1);
             }
             this.jtDatos.setModel(nuevTabl1);
-            if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
-                modeloE.Exportar(archivo1, jtDatos); // Elimina la línea que muestra el mensaje
-            } else {
-                JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-            }
+            modeloE.Exportar(archivo1, jtDatos);
+            
             Empleado ventaEmpl = new Empleado();
             ventaEmpl.setVisible(true);
             ventaEmpl.setLocationRelativeTo(null);

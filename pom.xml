@@ -10,5 +10,18 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.mycompany.proyecto2net.Proyecto2net</exec.mainClass>
+        <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>tu_version</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
     </properties>
+    
 </project>
+

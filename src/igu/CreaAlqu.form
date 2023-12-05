@@ -45,8 +45,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="Seg2Lb" min="-2" max="-2" attributes="0"/>
                               <Component id="UbiEntLb" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="CateLb" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="FechRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -54,40 +55,41 @@
                               <Component id="FecEnTemLb" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="UsuCliLb" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="ConCliLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="CondExLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="NumConAdiLb" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="ConCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="UsuCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="FecEntTarLb" min="-2" max="-2" attributes="0"/>
+                              <Component id="Seg1Lb" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FecEntTarTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="FecEntTemTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UsuCliTf" max="32767" attributes="0"/>
-                              <Component id="CondExtTf" max="32767" attributes="0"/>
-                              <Component id="UsuCondTf" max="32767" attributes="0"/>
-                              <Component id="UbiEntJcb" max="32767" attributes="0"/>
-                              <Component id="ConCliPf" max="32767" attributes="0"/>
-                              <Component id="ConCondPf" max="32767" attributes="0"/>
-                              <Component id="CateTf" min="-2" pref="178" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="FecEntTf" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UsuCliTf" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NumConAdiTf" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UsuCondTf" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UbiEntJcb" alignment="0" pref="184" max="32767" attributes="0"/>
+                              <Component id="ConCliPf" alignment="0" max="32767" attributes="0"/>
                               <Component id="FecRecTf" alignment="0" max="32767" attributes="0"/>
                               <Component id="UbiRecJcb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CatJcb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Seg1Jcb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Seg2Jcb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ConCondPf" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="CreAlquBtn" min="-2" pref="170" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="VolverBtn" min="-2" pref="170" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="CreaAlquLb" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -105,8 +107,8 @@
                   <Component id="CreaAlquLb" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="CatJcb" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="CateLb" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CateTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -115,25 +117,20 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UbiRecJcb" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="UbiRecLb" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UbiEntJcb" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="UbiEntLb" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="FecEntTemTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="FecEntTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="FecEnTemLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="FecEntTarTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="FecEntTarLb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UbiRecJcb" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="UbiRecLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="UbiEntJcb" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="UbiEntLb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="UsuCliTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="UsuCliLb" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -145,8 +142,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CondExtTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="CondExLb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NumConAdiTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="NumConAdiLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -154,19 +151,26 @@
                       <Component id="UsuCondTf" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ConCondLb" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                          <Component id="ConCondPf" min="-2" pref="25" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ConCondPf" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="ConCondLb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Seg1Lb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Seg1Jcb" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Seg2Jcb" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="Seg2Lb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="VolverBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="CreAlquBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="58" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -197,8 +201,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Categor&#xed;a:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="CateTf">
         </Component>
         <Component class="javax.swing.JLabel" name="FechRecLb">
           <Properties>
@@ -235,18 +237,7 @@
             <Property name="text" type="java.lang.String" value="Ubicaci&#xf3;n Entrega:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="FecEntTemTf">
-        </Component>
-        <Component class="javax.swing.JLabel" name="FecEntTarLb">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Fecha Entrega Tarde(DD/MM/AA):"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="FecEntTf">
         </Component>
         <Component class="javax.swing.JLabel" name="FecEnTemLb">
           <Properties>
@@ -256,10 +247,8 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Fecha Entrega Temprano(DD/MM/AA):"/>
+            <Property name="text" type="java.lang.String" value="Fecha Entrega (DD/MM/AA):"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="FecEntTarTf">
         </Component>
         <Component class="javax.swing.JButton" name="CreAlquBtn">
           <Properties>
@@ -297,7 +286,7 @@
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a Cliente:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="CondExLb">
+        <Component class="javax.swing.JLabel" name="NumConAdiLb">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -305,7 +294,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Conductores extra:"/>
+            <Property name="text" type="java.lang.String" value="N&#xfa;mero conductores adicionales:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="ConCondLb">
@@ -332,7 +321,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="UsuCliTf">
         </Component>
-        <Component class="javax.swing.JTextField" name="CondExtTf">
+        <Component class="javax.swing.JTextField" name="NumConAdiTf">
         </Component>
         <Component class="javax.swing.JTextField" name="UsuCondTf">
         </Component>
@@ -387,8 +376,6 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="ConCliPf">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="ConCondPf">
-        </Component>
         <Component class="javax.swing.JButton" name="VolverBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -402,6 +389,68 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VolverBtnActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CatJcb">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="Elegir"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Seg1Lb">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Seguro 1:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Seg2Lb">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Seguro 2:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Seg1Jcb">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="S&#xed;"/>
+                <StringItem index="1" value="No"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="Seg2Jcb">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="S&#xed;"/>
+                <StringItem index="1" value="No"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="ConCondPf">
         </Component>
       </SubComponents>
     </Container>

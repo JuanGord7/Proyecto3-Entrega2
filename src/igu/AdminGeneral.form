@@ -23,18 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="271" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" pref="283" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="451" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" pref="494" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -61,6 +55,7 @@
                               <Component id="HistVehBtn" max="32767" attributes="0"/>
                               <Component id="AdminBtn" alignment="0" pref="168" max="32767" attributes="0"/>
                               <Component id="CerrSesiBtn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ModTarBtn" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -79,7 +74,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -103,8 +98,10 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="AdminBtn" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="ModTarBtn" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="CerrSesiBtn" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -228,6 +225,20 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdminBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="ModTarBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Modificar Tarifa"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModTarBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
