@@ -26,7 +26,7 @@ public class CreaRese extends javax.swing.JFrame {
         initComponents();
         nuevTabl=new DefaultTableModel();
         nuevTabl.addColumn("Id");
-        nuevTabl.addColumn("Categoría");
+        nuevTabl.addColumn("Categoría Y Tipo");
         nuevTabl.addColumn("Fecha recogida");
         nuevTabl.addColumn("Ubicación recogida");
         nuevTabl.addColumn("Ubicación entrega");
@@ -52,7 +52,7 @@ public class CreaRese extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         CreaReseLb = new javax.swing.JLabel();
-        CateLb = new javax.swing.JLabel();
+        CatYTipLb = new javax.swing.JLabel();
         FechRecLb = new javax.swing.JLabel();
         FecRecTf = new javax.swing.JTextField();
         UbiRecLb = new javax.swing.JLabel();
@@ -74,7 +74,7 @@ public class CreaRese extends javax.swing.JFrame {
         UbiEntJcb = new javax.swing.JComboBox<>();
         ConCliPf = new javax.swing.JPasswordField();
         VolverBtn = new javax.swing.JButton();
-        CatJcb = new javax.swing.JComboBox<>();
+        CatYTipJcb = new javax.swing.JComboBox<>();
         Seg1Lb = new javax.swing.JLabel();
         Seg2Lb = new javax.swing.JLabel();
         Seg1Jcb = new javax.swing.JComboBox<>();
@@ -86,9 +86,9 @@ public class CreaRese extends javax.swing.JFrame {
         CreaReseLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         CreaReseLb.setText("Crear Reserva");
 
-        CateLb.setBackground(new java.awt.Color(255, 255, 255));
-        CateLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        CateLb.setText("Categoría:");
+        CatYTipLb.setBackground(new java.awt.Color(255, 255, 255));
+        CatYTipLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        CatYTipLb.setText("Categoría Y Tipo:");
 
         FechRecLb.setBackground(new java.awt.Color(255, 255, 255));
         FechRecLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -167,7 +167,7 @@ public class CreaRese extends javax.swing.JFrame {
             }
         });
 
-        CatJcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir" }));
+        CatYTipJcb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir" }));
 
         Seg1Lb.setBackground(new java.awt.Color(255, 255, 255));
         Seg1Lb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -192,7 +192,7 @@ public class CreaRese extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Seg2Lb)
                             .addComponent(UbiEntLb)
-                            .addComponent(CateLb)
+                            .addComponent(CatYTipLb)
                             .addComponent(FechRecLb)
                             .addComponent(UbiRecLb)
                             .addComponent(FecEnTemLb)
@@ -212,7 +212,7 @@ public class CreaRese extends javax.swing.JFrame {
                             .addComponent(ConCliPf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FecRecTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(UbiRecJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CatJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CatYTipJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Seg1Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Seg2Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ConCondPf))
@@ -240,8 +240,8 @@ public class CreaRese extends javax.swing.JFrame {
                 .addComponent(CreaReseLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CatJcb, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CateLb))
+                    .addComponent(CatYTipJcb, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CatYTipLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechRecLb)
@@ -338,13 +338,13 @@ public class CreaRese extends javax.swing.JFrame {
         String tarifa;
         long CalTar=0;
         for (int i=0; i<jtDatos.getRowCount(); i++){
-            String Cat = String.valueOf(jtDatos.getValueAt(i, 0));
+            String CatYTip = String.valueOf(jtDatos.getValueAt(i, 0));
             String TarDia = String.valueOf(jtDatos.getValueAt(i, 1));
             String SedDif = String.valueOf(jtDatos.getValueAt(i, 2));
             String Seg1 = String.valueOf(jtDatos.getValueAt(i, 3));
             String Seg2 = String.valueOf(jtDatos.getValueAt(i, 4));
             String ConAdi = String.valueOf(jtDatos.getValueAt(i, 5));
-            if (Cat.equals(CatJcb.getSelectedItem().toString())){
+            if (CatYTip.equals(CatYTipJcb.getSelectedItem().toString())){
                 CalTar = Integer.parseInt(TarDia)*diferenciaEnDias+(Integer.parseInt(ConAdi)*Integer.parseInt(NumConAdiTf.getText()));
                 if (!UbiRecJcb.getSelectedItem().toString().equals(UbiEntJcb.getSelectedItem().toString())){
                     CalTar += Integer.parseInt(SedDif);
@@ -364,7 +364,7 @@ public class CreaRese extends javax.swing.JFrame {
         String []info=new String[13];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Id = String.valueOf(jtDatos.getValueAt(i, 0));
-            String Cate = String.valueOf(jtDatos.getValueAt(i, 1));
+            String CatYTip = String.valueOf(jtDatos.getValueAt(i, 1));
             FecRec = String.valueOf(jtDatos.getValueAt(i, 2));
             String UbiRec = String.valueOf(jtDatos.getValueAt(i, 3));
             String UbiEnt = String.valueOf(jtDatos.getValueAt(i, 4));
@@ -377,7 +377,7 @@ public class CreaRese extends javax.swing.JFrame {
             String Reserva = String.valueOf(jtDatos.getValueAt(i, 11));
             String Pre = String.valueOf(jtDatos.getValueAt(i, 12));
             info[0]= Id;
-            info[1]= Cate;
+            info[1]= CatYTip;
             info[2]= FecRec;
             info[3]= UbiRec;
             info[4]= UbiEnt;
@@ -392,7 +392,7 @@ public class CreaRese extends javax.swing.JFrame {
             nuevTabl.addRow(info);
         }
         info[0]= String.valueOf(nuevTabl.getRowCount()+1);
-        info[1]= CatJcb.getSelectedItem().toString();
+        info[1]= CatYTipJcb.getSelectedItem().toString();
         info[2]= FecRecTf.getText();
         info[3]= UbiRecJcb.getSelectedItem().toString();
         info[4]= UbiEntJcb.getSelectedItem().toString();
@@ -426,7 +426,7 @@ public class CreaRese extends javax.swing.JFrame {
         File archivo = new File(nombreArchivo);
         modeloE.Importar(archivo, jtDatos);
         for (int i=0; i<jtDatos.getRowCount(); i++){
-            CatJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 0)));
+            CatYTipJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 0)));
         }
         
         nombreArchivo = "Sedes.xlsx";
@@ -439,8 +439,8 @@ public class CreaRese extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CatJcb;
-    private javax.swing.JLabel CateLb;
+    private javax.swing.JComboBox<String> CatYTipJcb;
+    private javax.swing.JLabel CatYTipLb;
     private javax.swing.JLabel ConCliLb;
     private javax.swing.JPasswordField ConCliPf;
     private javax.swing.JLabel ConCondLb;

@@ -21,7 +21,7 @@ public class ModTarifa extends javax.swing.JFrame {
     public ModTarifa() {
         initComponents();
         nuevTabl=new DefaultTableModel();
-        nuevTabl.addColumn("Categoría");
+        nuevTabl.addColumn("Categoría Y Tipo");
         nuevTabl.addColumn("Tarifa diaria");
         nuevTabl.addColumn("Sede diferente");
         nuevTabl.addColumn("Seguro1");
@@ -41,7 +41,7 @@ public class ModTarifa extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         ModTarLb = new javax.swing.JLabel();
-        CatLb = new javax.swing.JLabel();
+        CatYTipLb = new javax.swing.JLabel();
         UbiSedLb = new javax.swing.JLabel();
         HorApLb = new javax.swing.JLabel();
         Seg1Lb = new javax.swing.JLabel();
@@ -56,16 +56,16 @@ public class ModTarifa extends javax.swing.JFrame {
         Seg2Tf = new javax.swing.JTextField();
         ConAdiTf = new javax.swing.JTextField();
         ConAdiLb = new javax.swing.JLabel();
-        CatJcb = new javax.swing.JComboBox<>();
+        CatYTipJcb = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ModTarLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         ModTarLb.setText("Modificar Tarifa");
 
-        CatLb.setBackground(new java.awt.Color(255, 255, 255));
-        CatLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        CatLb.setText("Categoría:");
+        CatYTipLb.setBackground(new java.awt.Color(255, 255, 255));
+        CatYTipLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        CatYTipLb.setText("Categoría y Tipo:");
 
         UbiSedLb.setBackground(new java.awt.Color(255, 255, 255));
         UbiSedLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -138,7 +138,7 @@ public class ModTarifa extends javax.swing.JFrame {
         ConAdiLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         ConAdiLb.setText("Conductor Adicional:");
 
-        CatJcb.setPreferredSize(new java.awt.Dimension(64, 30));
+        CatYTipJcb.setPreferredSize(new java.awt.Dimension(64, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -159,7 +159,7 @@ public class ModTarifa extends javax.swing.JFrame {
                                 .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(CatLb)
+                                    .addComponent(CatYTipLb)
                                     .addComponent(HorApLb)
                                     .addComponent(Seg1Lb)
                                     .addComponent(UbiSedLb)
@@ -171,7 +171,7 @@ public class ModTarifa extends javax.swing.JFrame {
                                     .addComponent(Seg1Tf)
                                     .addComponent(Seg2Tf)
                                     .addComponent(ConAdiTf)
-                                    .addComponent(CatJcb, 0, 155, Short.MAX_VALUE)
+                                    .addComponent(CatYTipJcb, 0, 155, Short.MAX_VALUE)
                                     .addComponent(TarDiaTf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,8 +187,8 @@ public class ModTarifa extends javax.swing.JFrame {
                 .addComponent(ModTarLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CatJcb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CatLb))
+                    .addComponent(CatYTipJcb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CatYTipLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TarDiaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,21 +244,21 @@ public class ModTarifa extends javax.swing.JFrame {
         
         String []info=new String[6];
         for (int i=0; i<jtDatos.getRowCount(); i++){
-            String Cat = String.valueOf(jtDatos.getValueAt(i, 0));
+            String CatYTip = String.valueOf(jtDatos.getValueAt(i, 0));
             String TarDia = String.valueOf(jtDatos.getValueAt(i, 1));
             String SedDif = String.valueOf(jtDatos.getValueAt(i, 2));
             String Seg1 = String.valueOf(jtDatos.getValueAt(i, 3));
             String Seg2 = String.valueOf(jtDatos.getValueAt(i, 4));
             String ConAdi = String.valueOf(jtDatos.getValueAt(i, 5));
-            if (Cat.equals(CatJcb.getSelectedItem().toString())){
-                info[0]= Cat;
+            if (CatYTip.equals(CatYTipJcb.getSelectedItem().toString())){
+                info[0]= CatYTip;
                 info[1]= TarDiaTf.getText();
                 info[2]= SedDifTf.getText();
                 info[3]= Seg1Tf.getText();
                 info[4]= Seg2Tf.getText();
                 info[5]= ConAdiTf.getText();
             } else {
-                info[0]= Cat;
+                info[0]= CatYTip;
                 info[1]= TarDia;
                 info[2]= SedDif;
                 info[3]= Seg1;
@@ -296,13 +296,13 @@ public class ModTarifa extends javax.swing.JFrame {
         File archivo = new File(nombreArchivo);
         modeloE.Importar(archivo, jtDatos);
         for (int i=0; i<jtDatos.getRowCount(); i++){
-            CatJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 0)));
+            CatYTipJcb.addItem(String.valueOf(jtDatos.getValueAt(i, 0)));
         }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CatJcb;
-    private javax.swing.JLabel CatLb;
+    private javax.swing.JComboBox<String> CatYTipJcb;
+    private javax.swing.JLabel CatYTipLb;
     private javax.swing.JLabel ConAdiLb;
     private javax.swing.JTextField ConAdiTf;
     private javax.swing.JLabel HorApLb;
