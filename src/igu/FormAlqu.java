@@ -1,30 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import java.io.File;
 import javax.swing.JOptionPane;
 import logica.ImportarExportar;
 import javax.swing.table.DefaultTableModel;
-/**
- *
- * @author jumag
- */
+
 public class FormAlqu extends javax.swing.JFrame {
     ImportarExportar modeloE = new ImportarExportar();
     DefaultTableModel nuevTabl;
     DefaultTableModel nuevTabl1;
     
-    /**
-     * Creates new form FormAlqu
-     */
+
     public FormAlqu() {
         initComponents();
         nuevTabl=new DefaultTableModel();
         nuevTabl.addColumn("Id");
-        nuevTabl.addColumn("Categoría");
+        nuevTabl.addColumn("Categoría Y Tipo");
         nuevTabl.addColumn("Fecha recogida");
         nuevTabl.addColumn("Ubicación recogida");
         nuevTabl.addColumn("Ubicación entrega");
@@ -44,6 +36,8 @@ public class FormAlqu extends javax.swing.JFrame {
         nuevTabl1.addColumn("Categoría");
         nuevTabl1.addColumn("Número de sede");
         nuevTabl1.addColumn("Id Alquiler");
+        nuevTabl1.addColumn("Fecha Inicio Alquiler");
+        nuevTabl1.addColumn("Fecha Final Alquiler");
     }
 
     /**
@@ -172,11 +166,10 @@ public class FormAlqu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FormAlquBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormAlquBtnActionPerformed
-        String nombreArchivoAlquileres = "Alquileres.xlsx";
-        File archivoAlquileres = new File(nombreArchivoAlquileres);
-        modeloE.Importar(archivoAlquileres, jtDatos);
-
-        String[] datoRese = null;
+        String nombreArchivo= "Alquileres.xlsx";
+        File archivo = new File(nombreArchivo);
+        modeloE.Importar(archivo, jtDatos);
+        String[] datoRese = new String[13];
         String[] info = new String[13];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Id = String.valueOf(jtDatos.getValueAt(i, 0));
@@ -206,17 +199,17 @@ public class FormAlqu extends javax.swing.JFrame {
             info[11]= Reserva;
             info[12]= Pre;
             if (Id.equals(IdResTf.getText())) {
-                datoRese = info.clone();
                 info[11] = "No";
+                datoRese = info.clone(); 
             }
             nuevTabl.addRow(info);
         }
         this.jtDatos.setModel(nuevTabl);
-        modeloE.Exportar(archivoAlquileres, jtDatos);
-        String nombreArchivo = "Vehiculos.xlsx";
-        File archivo1 = new File(nombreArchivo);
-        modeloE.Importar(archivo1, jtDatos);
-        String[] info1=new String[7];
+        modeloE.Exportar(archivo, jtDatos);
+        nombreArchivo = "Vehiculos.xlsx";
+        archivo = new File(nombreArchivo);
+        modeloE.Importar(archivo, jtDatos);
+        info=new String[9];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
             String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
@@ -225,38 +218,44 @@ public class FormAlqu extends javax.swing.JFrame {
             String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
             String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
             String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
-            info1[0]=Placa;
-            info1[1]=Marca;
-            info1[2]=Color;
-            info1[3]=Trans;
-            info1[4]=Cate;
-            info1[5]=Numse;
-            info1[6]=IdAlqu;
-            String CateRese = (datoRese != null) ? datoRese[1] : null;
-            if (Cate.equals(CateRese)&&IdAlqu.equals("0")){
-                info1[6] = datoRese[0];
+            String FecIni = String.valueOf(jtDatos.getValueAt(i, 7));
+            String FecFin = String.valueOf(jtDatos.getValueAt(i, 8));
+            info[0]=Placa;
+            info[1]=Marca;
+            info[2]=Color;
+            info[3]=Trans;
+            info[4]=Cate;
+            info[5]=Numse;
+            info[6]=IdAlqu;
+            info[7]=FecIni;
+            info[8]=FecFin;
+            if (Cate.equals(datoRese[1])&&IdAlqu.equals("0")){
+                info[6] = datoRese[0];
+                info[7] = datoRese[2];
+                info[8] = datoRese[5];
                 datoRese = null;
                 JOptionPane.showMessageDialog(null, "El carro de alquiler tiene la placa " + Placa);
             }
-            nuevTabl1.addRow(info1);
+            nuevTabl1.addRow(info);
         }
         if (datoRese == null) {
             this.jtDatos.setModel(nuevTabl1);
-            modeloE.Exportar(archivo1, jtDatos);
-            
+            modeloE.Exportar(archivo, jtDatos);
             Empleado ventaEmpl = new Empleado();
             ventaEmpl.setVisible(true);
             ventaEmpl.setLocationRelativeTo(null);
             this.setVisible(false);
         } else{
             nuevTabl1=new DefaultTableModel();
-            nuevTabl.addColumn("Placa");
-            nuevTabl.addColumn("Marca");
-            nuevTabl.addColumn("Color");
-            nuevTabl.addColumn("Transmisión");
-            nuevTabl.addColumn("Categoría");
-            nuevTabl.addColumn("Número de sede");
-            nuevTabl.addColumn("Id Alquiler");
+            nuevTabl1.addColumn("Placa");
+            nuevTabl1.addColumn("Marca");
+            nuevTabl1.addColumn("Color");
+            nuevTabl1.addColumn("Transmisión");
+            nuevTabl1.addColumn("Categoría");
+            nuevTabl1.addColumn("Número de sede");
+            nuevTabl1.addColumn("Id Alquiler");
+            nuevTabl1.addColumn("Fecha Inicial Alquiler");
+            nuevTabl1.addColumn("Fecha Final Alquiler");
             for (int i=0; i<jtDatos.getRowCount(); i++){
                 String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
                 String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
@@ -265,23 +264,28 @@ public class FormAlqu extends javax.swing.JFrame {
                 String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
                 String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
                 String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
-                info1[0]=Placa;
-                info1[1]=Marca;
-                info1[2]=Color;
-                info1[3]=Trans;
-                info1[4]=Cate;
-                info1[5]=Numse;
-                info1[6]=IdAlqu;
-                if (Cate.equals("0")&&datoRese!=null){
-                    info1[6] = datoRese[0];
+                String FecIni = String.valueOf(jtDatos.getValueAt(i, 7));
+                String FecFin = String.valueOf(jtDatos.getValueAt(i, 8));
+                info[0]=Placa;
+                info[1]=Marca;
+                info[2]=Color;
+                info[3]=Trans;
+                info[4]=Cate;
+                info[5]=Numse;
+                info[6]=IdAlqu;
+                info[7]=FecIni;
+                info[8]=FecFin;
+                if (IdAlqu.equals("0")&&datoRese!=null){
+                    info[6] = datoRese[0];
+                    info[7] = datoRese[2];
+                    info[8] = datoRese[5];
                     datoRese = null;
                     JOptionPane.showMessageDialog(null, "El carro de alquiler tiene la placa " + Placa);
                 }
-                nuevTabl1.addRow(info1);
+                nuevTabl1.addRow(info);
             }
             this.jtDatos.setModel(nuevTabl1);
-            modeloE.Exportar(archivo1, jtDatos);
-            
+            modeloE.Exportar(archivo, jtDatos);
             Empleado ventaEmpl = new Empleado();
             ventaEmpl.setVisible(true);
             ventaEmpl.setLocationRelativeTo(null);

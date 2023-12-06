@@ -1,24 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import java.io.File;
 import javax.swing.JOptionPane;
 import logica.ImportarExportar;
 import javax.swing.table.DefaultTableModel;
-/**
- *
- * @author jumag
- */
-public class ElimCarro extends javax.swing.JFrame {
+
+public class ElimVeh extends javax.swing.JFrame {
     ImportarExportar modeloE = new ImportarExportar();
     DefaultTableModel nuevTabl;
-    /**
-     * Creates new form ElimCarro
-     */
-    public ElimCarro() {
+    public ElimVeh() {
         initComponents();
         nuevTabl=new DefaultTableModel();
         nuevTabl.addColumn("Placa");
@@ -28,6 +19,8 @@ public class ElimCarro extends javax.swing.JFrame {
         nuevTabl.addColumn("Categoría");
         nuevTabl.addColumn("Número de sede");
         nuevTabl.addColumn("Id Alquiler");
+        nuevTabl.addColumn("Fecha Inicial Alquiler");
+        nuevTabl.addColumn("Fecha Final Alquiler");
     }
 
     /**
@@ -40,7 +33,7 @@ public class ElimCarro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        ElimCarroBtn = new javax.swing.JButton();
+        EliVehBtn = new javax.swing.JButton();
         PlacaTf = new javax.swing.JTextField();
         PlacaLb = new javax.swing.JLabel();
         ElimCarLb = new javax.swing.JLabel();
@@ -50,12 +43,12 @@ public class ElimCarro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ElimCarroBtn.setBackground(new java.awt.Color(0, 0, 0));
-        ElimCarroBtn.setForeground(new java.awt.Color(255, 255, 255));
-        ElimCarroBtn.setText("Eliminar Carro");
-        ElimCarroBtn.addActionListener(new java.awt.event.ActionListener() {
+        EliVehBtn.setBackground(new java.awt.Color(0, 0, 0));
+        EliVehBtn.setForeground(new java.awt.Color(255, 255, 255));
+        EliVehBtn.setText("Eliminar Vehículo");
+        EliVehBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ElimCarroBtnActionPerformed(evt);
+                EliVehBtnActionPerformed(evt);
             }
         });
 
@@ -64,7 +57,7 @@ public class ElimCarro extends javax.swing.JFrame {
         PlacaLb.setText("Placa:");
 
         ElimCarLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        ElimCarLb.setText("Eliminar Carro");
+        ElimCarLb.setText("Eliminar Vehículo");
 
         jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -99,22 +92,21 @@ public class ElimCarro extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(PlacaLb)
-                .addGap(18, 18, 18)
-                .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(ElimCarLb)
-                        .addGap(60, 60, 60))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(ElimCarroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(EliVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))))
+                        .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(PlacaLb)
+                        .addGap(18, 18, 18)
+                        .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(ElimCarLb)))
+                .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -133,8 +125,8 @@ public class ElimCarro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ElimCarroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(EliVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -156,15 +148,11 @@ public class ElimCarro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ElimCarroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElimCarroBtnActionPerformed
+    private void EliVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliVehBtnActionPerformed
         String nombreArchivo = "Vehiculos.xlsx";
         File archivo = new File(nombreArchivo);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
-        String []info=new String[7];
+        modeloE.Importar(archivo, jtDatos);
+        String []info=new String[9];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
             String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
@@ -173,6 +161,8 @@ public class ElimCarro extends javax.swing.JFrame {
             String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
             String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
             String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
+            String FecIni = String.valueOf(jtDatos.getValueAt(i, 7));
+            String FecFin = String.valueOf(jtDatos.getValueAt(i, 8));
             info[0]=Placa;
             info[1]=Marca;
             info[2]=Color;
@@ -180,6 +170,8 @@ public class ElimCarro extends javax.swing.JFrame {
             info[4]=Cate;
             info[5]=Numse;
             info[6]=IdAlqu;
+            info[7]=FecIni;
+            info[8]=FecFin;
             if (PlacaTf.getText().equals(Placa)){
                 JOptionPane.showMessageDialog(null, "Se ha eliminado el vehiculo del sistema.");
             } else{
@@ -187,16 +179,12 @@ public class ElimCarro extends javax.swing.JFrame {
             }
         }
         this.jtDatos.setModel(nuevTabl);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
+        modeloE.Exportar(archivo, jtDatos);
         AdminGeneral ventaAdminGen = new AdminGeneral();
         ventaAdminGen.setVisible(true);
         ventaAdminGen.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_ElimCarroBtnActionPerformed
+    }//GEN-LAST:event_EliVehBtnActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         AdminGeneral ventaAdminGen = new AdminGeneral();
@@ -206,8 +194,8 @@ public class ElimCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EliVehBtn;
     private javax.swing.JLabel ElimCarLb;
-    private javax.swing.JButton ElimCarroBtn;
     private javax.swing.JLabel PlacaLb;
     private javax.swing.JTextField PlacaTf;
     private javax.swing.JButton VolverBtn;

@@ -1,33 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import java.io.File;
 import javax.swing.JOptionPane;
 import logica.ImportarExportar;
-import javax.swing.table.DefaultTableModel;
-/**
- *
- * @author jumag
- */
+
 public class UbiVehi extends javax.swing.JFrame {
     ImportarExportar modeloE = new ImportarExportar();
-    DefaultTableModel nuevTabl;
     String NumSede;
-    /**
-     * Creates new form UbiVehi
-     */
+
     public UbiVehi() {
         initComponents();
-        nuevTabl=new DefaultTableModel();
-        nuevTabl.addColumn("Placa");
-        nuevTabl.addColumn("Marca");
-        nuevTabl.addColumn("Color");
-        nuevTabl.addColumn("Transmisión");
-        nuevTabl.addColumn("Categoría");
-        nuevTabl.addColumn("Número de sede");
     }
 
     /**
@@ -40,37 +23,31 @@ public class UbiVehi extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        UbiVehBtn = new javax.swing.JButton();
-        PlacaTf = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        BusUbiVehBtn = new javax.swing.JButton();
+        PlaTf = new javax.swing.JTextField();
+        PlaLb = new javax.swing.JLabel();
+        UbiVehLb = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtDatos = new javax.swing.JTable();
-        VolverBtn = new javax.swing.JButton();
+        VolBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        UbiVehBtn.setBackground(new java.awt.Color(0, 0, 0));
-        UbiVehBtn.setForeground(new java.awt.Color(255, 255, 255));
-        UbiVehBtn.setText("Buscar Ubicación del Vehículo");
-        UbiVehBtn.addActionListener(new java.awt.event.ActionListener() {
+        BusUbiVehBtn.setBackground(new java.awt.Color(0, 0, 0));
+        BusUbiVehBtn.setForeground(new java.awt.Color(255, 255, 255));
+        BusUbiVehBtn.setText("Buscar Ubicación del Vehículo");
+        BusUbiVehBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UbiVehBtnActionPerformed(evt);
+                BusUbiVehBtnActionPerformed(evt);
             }
         });
 
-        PlacaTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PlacaTfActionPerformed(evt);
-            }
-        });
+        PlaLb.setBackground(new java.awt.Color(255, 255, 255));
+        PlaLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        PlaLb.setText("Placa:");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel2.setText("Placa:");
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        jLabel1.setText("Ubicación Vehículo ");
+        UbiVehLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        UbiVehLb.setText("Ubicación Vehículo ");
 
         jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,12 +68,12 @@ public class UbiVehi extends javax.swing.JFrame {
         jtDatos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jtDatos);
 
-        VolverBtn.setBackground(new java.awt.Color(0, 0, 0));
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        VolBtn.setBackground(new java.awt.Color(0, 0, 0));
+        VolBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolBtn.setText("Volver");
+        VolBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                VolBtnActionPerformed(evt);
             }
         });
 
@@ -107,14 +84,14 @@ public class UbiVehi extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(UbiVehBtn)
-                    .addComponent(jLabel1)
+                    .addComponent(BusUbiVehBtn)
+                    .addComponent(UbiVehLb)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(PlaLb)
                         .addGap(18, 18, 18)
-                        .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PlaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(VolverBtn)
+                        .addComponent(VolBtn)
                         .addGap(56, 56, 56)))
                 .addGap(0, 43, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,15 +104,15 @@ public class UbiVehi extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UbiVehLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlacaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(PlaTf, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PlaLb))
                 .addGap(18, 18, 18)
-                .addComponent(UbiVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BusUbiVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VolBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -158,79 +135,55 @@ public class UbiVehi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UbiVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UbiVehBtnActionPerformed
+    private void BusUbiVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusUbiVehBtnActionPerformed
         String nombreArchivo = "Vehiculos.xlsx";
         File archivo = new File(nombreArchivo);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos); // Elimina la línea que muestra el mensaje
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
-        String []info=new String[6];
+        modeloE.Importar(archivo, jtDatos);
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
-            String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
-            String Color = String.valueOf(jtDatos.getValueAt(i, 2));
-            String Trans = String.valueOf(jtDatos.getValueAt(i, 3));
-            String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
             String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
-            info[0]=Placa;
-            info[1]=Marca;
-            info[2]=Color;
-            info[3]=Trans;
-            info[4]=Cate;
-            info[5]=Numse;
-            nuevTabl.addRow(info);
-            if (PlacaTf.getText().equals(Placa)){
+            if (PlaTf.getText().equals(Placa)){
                 NumSede = Numse;
             }
         }
         nombreArchivo = "Sedes.xlsx";
-        File archivo1 = new File(nombreArchivo);
-        if (archivo1.getName().endsWith("xls") || archivo1.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo1, jtDatos); // Elimina la línea que muestra el mensaje
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
-        info=new String[5];
+        archivo = new File(nombreArchivo);
+        modeloE.Importar(archivo, jtDatos);
+        boolean encontrado = false;
         for (int i=0; i<jtDatos.getRowCount(); i++){
-            String Numero = String.valueOf(i+1);
+            String Numero = String.valueOf(jtDatos.getValueAt(i, 0));
             String Nombre = String.valueOf(jtDatos.getValueAt(i, 1));
-            String Ubi = String.valueOf(jtDatos.getValueAt(i, 2));
-            String HorA = String.valueOf(jtDatos.getValueAt(i, 3));
-            String HorC = String.valueOf(jtDatos.getValueAt(i, 4));
-            info[0]=Numero;
-            info[1]=Nombre;
-            info[2]=Ubi;
-            info[3]=HorA;
-            info[4]=HorC;
             if (Numero.equals(NumSede)){
                 JOptionPane.showMessageDialog(null, "El vehiculo está en la sede "+Nombre);
                 AdminGeneral ventaAdminGen = new AdminGeneral();
                 ventaAdminGen.setVisible(true);
                 ventaAdminGen.setLocationRelativeTo(null);
                 this.setVisible(false);
+                encontrado = true;
             }
         }
-    }//GEN-LAST:event_UbiVehBtnActionPerformed
+        if (!encontrado){
+            JOptionPane.showMessageDialog(null, "El vehiculo no se ha encontrado");
+            AdminGeneral ventaAdminGen = new AdminGeneral();
+            ventaAdminGen.setVisible(true);
+            ventaAdminGen.setLocationRelativeTo(null);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_BusUbiVehBtnActionPerformed
 
-    private void PlacaTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlacaTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PlacaTfActionPerformed
-
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
-        IniSesion ventaInises = new IniSesion();
-        ventaInises.setVisible(true);
-        ventaInises.setLocationRelativeTo(null);
+    private void VolBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolBtnActionPerformed
+        AdminGeneral ventaAdminGen = new AdminGeneral();
+        ventaAdminGen.setVisible(true);
+        ventaAdminGen.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_VolBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField PlacaTf;
-    private javax.swing.JButton UbiVehBtn;
-    private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton BusUbiVehBtn;
+    private javax.swing.JLabel PlaLb;
+    private javax.swing.JTextField PlaTf;
+    private javax.swing.JLabel UbiVehLb;
+    private javax.swing.JButton VolBtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;

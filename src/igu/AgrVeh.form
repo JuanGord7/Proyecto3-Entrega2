@@ -45,7 +45,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="AgrCarroBtn" min="-2" pref="159" max="-2" attributes="0"/>
+                          <Component id="AgrVehBtn" min="-2" pref="159" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="VolverBtn" min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
@@ -126,7 +126,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AgrCarroBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="AgrVehBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="VolverBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
@@ -147,7 +147,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT Condensed Extra Bold" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Agregar Carro"/>
+            <Property name="text" type="java.lang.String" value="Agregar Veh&#xed;culo"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="PlacaLb">
@@ -228,7 +228,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="CateTf">
         </Component>
-        <Component class="javax.swing.JButton" name="AgrCarroBtn">
+        <Component class="javax.swing.JButton" name="AgrVehBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -236,10 +236,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Agregar Carro"/>
+            <Property name="text" type="java.lang.String" value="Agregar Veh&#xed;culo"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgrCarroBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgrVehBtnActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">

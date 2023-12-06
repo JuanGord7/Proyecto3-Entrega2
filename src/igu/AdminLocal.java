@@ -30,7 +30,6 @@ public class AdminLocal extends javax.swing.JFrame {
         AdminLb = new javax.swing.JLabel();
         RegEmplBtn = new javax.swing.JButton();
         ElimEmplBtn = new javax.swing.JButton();
-        UbiVehBtn = new javax.swing.JButton();
         HistVehBtn = new javax.swing.JButton();
         CerrSesiBtn = new javax.swing.JButton();
 
@@ -56,15 +55,6 @@ public class AdminLocal extends javax.swing.JFrame {
         ElimEmplBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ElimEmplBtnActionPerformed(evt);
-            }
-        });
-
-        UbiVehBtn.setBackground(new java.awt.Color(0, 0, 0));
-        UbiVehBtn.setForeground(new java.awt.Color(255, 255, 255));
-        UbiVehBtn.setText("Ubicación Vehículo");
-        UbiVehBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UbiVehBtnActionPerformed(evt);
             }
         });
 
@@ -97,7 +87,6 @@ public class AdminLocal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ElimEmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(RegEmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UbiVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(HistVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CerrSesiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -112,15 +101,13 @@ public class AdminLocal extends javax.swing.JFrame {
                 .addComponent(AdminLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(RegEmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ElimEmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(UbiVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(HistVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CerrSesiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,7 +118,7 @@ public class AdminLocal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
         );
 
         pack();
@@ -150,13 +137,6 @@ public class AdminLocal extends javax.swing.JFrame {
         ventaElimEmpl.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_ElimEmplBtnActionPerformed
-
-    private void UbiVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UbiVehBtnActionPerformed
-        UbiVehi ventaUbiVehi = new UbiVehi();
-        ventaUbiVehi.setVisible(true);
-        ventaUbiVehi.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }//GEN-LAST:event_UbiVehBtnActionPerformed
 
     private void HistVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistVehBtnActionPerformed
         HistVehi ventaHistVehi = new HistVehi();
@@ -178,7 +158,6 @@ public class AdminLocal extends javax.swing.JFrame {
     private javax.swing.JButton ElimEmplBtn;
     private javax.swing.JButton HistVehBtn;
     private javax.swing.JButton RegEmplBtn;
-    private javax.swing.JButton UbiVehBtn;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

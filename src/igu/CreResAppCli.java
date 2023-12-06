@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import java.io.File;
@@ -12,17 +9,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-/**
- *
- * @author jumag
- */
-public class CreaRese extends javax.swing.JFrame {
+
+public class CreResAppCli extends javax.swing.JFrame {
     ImportarExportar modeloE = new ImportarExportar();
     DefaultTableModel nuevTabl;
-    /**
-     * Creates new form CreaRese
-     */
-    public CreaRese() {
+    public CreResAppCli() {
         initComponents();
         nuevTabl=new DefaultTableModel();
         nuevTabl.addColumn("Id");
@@ -208,7 +199,7 @@ public class CreaRese extends javax.swing.JFrame {
                             .addComponent(UsuCliTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NumConAdiTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(UsuCondTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, 220, Short.MAX_VALUE)
+                            .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ConCliPf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FecRecTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(UbiRecJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -222,16 +213,16 @@ public class CreaRese extends javax.swing.JFrame {
                         .addComponent(CreResBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(12, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(158, 158, 158)
                 .addComponent(CreaReseLb)
-                .addGap(176, 176, 176))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(394, Short.MAX_VALUE)))
+                    .addContainerGap(441, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,12 +281,12 @@ public class CreaRese extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CreResBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(442, Short.MAX_VALUE)))
+                    .addContainerGap(494, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -304,12 +295,11 @@ public class CreaRese extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -409,18 +399,19 @@ public class CreaRese extends javax.swing.JFrame {
         this.jtDatos.setModel(nuevTabl);
         modeloE.Exportar(archivo, jtDatos);
         JOptionPane.showMessageDialog(null, "Ha agregado una reserva al sistema.");
-        Cliente ventaCli = new Cliente();
-        ventaCli.setVisible(true);
-        ventaCli.setLocationRelativeTo(null);
+        CliAppCli ventaCliAppCli = new CliAppCli();
+        ventaCliAppCli.setVisible(true);
+        ventaCliAppCli.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_CreResBtnActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
-        Cliente ventaCli = new Cliente();
-        ventaCli.setVisible(true);
-        ventaCli.setLocationRelativeTo(null);
+        CliAppCli ventaCliAppCli = new CliAppCli();
+        ventaCliAppCli.setVisible(true);
+        ventaCliAppCli.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_VolverBtnActionPerformed
+
     private void llenarComboBox() {
         String nombreArchivo = "Tarifas.xlsx";
         File archivo = new File(nombreArchivo);

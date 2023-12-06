@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import java.io.File;
@@ -9,16 +6,10 @@ import javax.swing.JOptionPane;
 import logica.ImportarExportar;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author jumag
- */
 public class RegEmpl extends javax.swing.JFrame {
     ImportarExportar modeloE = new ImportarExportar();
     DefaultTableModel nuevTabl;
-    /**
-     * Creates new form RegEmpl
-     */
+    
     public RegEmpl() {
         initComponents();
         nuevTabl=new DefaultTableModel();
@@ -174,7 +165,7 @@ public class RegEmpl extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(RegEmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

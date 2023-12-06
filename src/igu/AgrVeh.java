@@ -1,24 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import java.io.File;
 import javax.swing.JOptionPane;
 import logica.ImportarExportar;
 import javax.swing.table.DefaultTableModel;
-/**
- *
- * @author jumag
- */
-public class AgrCarro extends javax.swing.JFrame {
+
+public class AgrVeh extends javax.swing.JFrame {
     ImportarExportar modeloE = new ImportarExportar();
     DefaultTableModel nuevTabl;
-    /**
-     * Creates new form AgrCarro
-     */
-    public AgrCarro() {
+    public AgrVeh() {
         initComponents();
         nuevTabl=new DefaultTableModel();
         nuevTabl.addColumn("Placa");
@@ -28,6 +19,8 @@ public class AgrCarro extends javax.swing.JFrame {
         nuevTabl.addColumn("Categoría");
         nuevTabl.addColumn("Número de sede");
         nuevTabl.addColumn("Id Alquiler");
+        nuevTabl.addColumn("Fecha Inicial Alquiler");
+        nuevTabl.addColumn("Fecha Final Alquiler");
     }
 
     /**
@@ -53,7 +46,7 @@ public class AgrCarro extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         CateTf = new javax.swing.JTextField();
-        AgrCarroBtn = new javax.swing.JButton();
+        AgrVehBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtDatos = new javax.swing.JTable();
         VolverBtn = new javax.swing.JButton();
@@ -61,7 +54,7 @@ public class AgrCarro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         AgrCarLb.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        AgrCarLb.setText("Agregar Carro");
+        AgrCarLb.setText("Agregar Vehículo");
 
         PlacaLb.setBackground(new java.awt.Color(255, 255, 255));
         PlacaLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -87,12 +80,12 @@ public class AgrCarro extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel7.setText("Número de sede:");
 
-        AgrCarroBtn.setBackground(new java.awt.Color(0, 0, 0));
-        AgrCarroBtn.setForeground(new java.awt.Color(255, 255, 255));
-        AgrCarroBtn.setText("Agregar Carro");
-        AgrCarroBtn.addActionListener(new java.awt.event.ActionListener() {
+        AgrVehBtn.setBackground(new java.awt.Color(0, 0, 0));
+        AgrVehBtn.setForeground(new java.awt.Color(255, 255, 255));
+        AgrVehBtn.setText("Agregar Vehículo");
+        AgrVehBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgrCarroBtnActionPerformed(evt);
+                AgrVehBtnActionPerformed(evt);
             }
         });
 
@@ -132,7 +125,7 @@ public class AgrCarro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(AgrCarroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AgrVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -195,7 +188,7 @@ public class AgrCarro extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AgrCarroBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AgrVehBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,15 +214,11 @@ public class AgrCarro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgrCarroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgrCarroBtnActionPerformed
+    private void AgrVehBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgrVehBtnActionPerformed
         String nombreArchivo = "Vehiculos.xlsx";
         File archivo = new File(nombreArchivo);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Importar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
-        String []info=new String[7];
+        modeloE.Importar(archivo, jtDatos);
+        String []info=new String[9];
         for (int i=0; i<jtDatos.getRowCount(); i++){
             String Placa = String.valueOf(jtDatos.getValueAt(i, 0));
             String Marca = String.valueOf(jtDatos.getValueAt(i, 1));
@@ -238,6 +227,8 @@ public class AgrCarro extends javax.swing.JFrame {
             String Cate = String.valueOf(jtDatos.getValueAt(i, 4));
             String Numse = String.valueOf(jtDatos.getValueAt(i, 5));
             String IdAlqu = String.valueOf(jtDatos.getValueAt(i, 6));
+            String FecIni = String.valueOf(jtDatos.getValueAt(i, 7));
+            String FecFin = String.valueOf(jtDatos.getValueAt(i, 8));
             info[0]=Placa;
             info[1]=Marca;
             info[2]=Color;
@@ -245,6 +236,8 @@ public class AgrCarro extends javax.swing.JFrame {
             info[4]=Cate;
             info[5]=Numse;
             info[6]=IdAlqu;
+            info[7]=FecIni;
+            info[8]=FecFin;
             nuevTabl.addRow(info);
         }
         info[0]=PlacaTf.getText();
@@ -254,19 +247,17 @@ public class AgrCarro extends javax.swing.JFrame {
         info[4]=CateTf.getText();
         info[5]=NumSeTf.getText();
         info[6]="0";
+        info[7]="0/0/0";
+        info[8]="0/0/0";
         nuevTabl.addRow(info);
         this.jtDatos.setModel(nuevTabl);
-        if (archivo.getName().endsWith("xls") || archivo.getName().endsWith("xlsx")) {
-            modeloE.Exportar(archivo, jtDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Elija un formato valido.");
-        }
+        modeloE.Exportar(archivo, jtDatos);
         JOptionPane.showMessageDialog(null, "Ha agregado un vehículo al sistema.");
         AdminGeneral ventaAdminGen = new AdminGeneral();
         ventaAdminGen.setVisible(true);
         ventaAdminGen.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_AgrCarroBtnActionPerformed
+    }//GEN-LAST:event_AgrVehBtnActionPerformed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         AdminGeneral ventaAdminGen = new AdminGeneral();
@@ -277,7 +268,7 @@ public class AgrCarro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgrCarLb;
-    private javax.swing.JButton AgrCarroBtn;
+    private javax.swing.JButton AgrVehBtn;
     private javax.swing.JTextField CateTf;
     private javax.swing.JLabel ColorLb;
     private javax.swing.JTextField ColorTf;

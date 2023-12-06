@@ -196,14 +196,14 @@ public class AdminGeneral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgrCarroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgrCarroBtnActionPerformed
-        AgrCarro ventaAgrCarro = new AgrCarro();
+        AgrVeh ventaAgrCarro = new AgrVeh();
         ventaAgrCarro.setVisible(true);
         ventaAgrCarro.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_AgrCarroBtnActionPerformed
 
     private void ElimCarroBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElimCarroBtnActionPerformed
-        ElimCarro ventaElimCarro = new ElimCarro();
+        ElimVeh ventaElimCarro = new ElimVeh();
         ventaElimCarro.setVisible(true);
         ventaElimCarro.setLocationRelativeTo(null);
         this.setVisible(false);
