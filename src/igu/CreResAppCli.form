@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -43,29 +43,33 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="Seg2Lb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="UbiEntLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="CatYTipLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="FechRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="UbiRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="FecEnTemLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuCliLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConCliLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="NumConAdiLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Seg1Lb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="CreResBtn" min="-2" pref="170" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="Seg2Lb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="UbiEntLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="CatYTipLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="FechRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="UbiRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="FecEnTemLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="UsuCliLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="ConCliLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="NumConAdiLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="ConCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="UsuCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="Seg1Lb" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="FecEntTf" alignment="0" max="32767" attributes="0"/>
                               <Component id="UsuCliTf" alignment="0" max="32767" attributes="0"/>
                               <Component id="NumConAdiTf" alignment="0" max="32767" attributes="0"/>
                               <Component id="UsuCondTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UbiEntJcb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UbiEntJcb" alignment="0" pref="150" max="32767" attributes="0"/>
                               <Component id="ConCliPf" alignment="0" max="32767" attributes="0"/>
                               <Component id="FecRecTf" alignment="0" max="32767" attributes="0"/>
                               <Component id="UbiRecJcb" alignment="0" max="32767" attributes="0"/>
@@ -76,12 +80,9 @@
                           </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                          <Component id="CreResBtn" min="-2" pref="170" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="VolverBtn" min="-2" pref="170" max="-2" attributes="0"/>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="VolverBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -164,12 +165,12 @@
                       <Component id="Seg2Jcb" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="Seg2Lb" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="VolverBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="CreResBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="VolverBtn" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
