@@ -115,11 +115,11 @@ public class CreResAppCli extends javax.swing.JFrame {
 
         ConCondLb.setBackground(new java.awt.Color(255, 255, 255));
         ConCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        ConCondLb.setText("Contraseña del conductor:");
+        ConCondLb.setText("Contraseña del conductor (\"No\" si no hay conductores adicionales):");
 
         UsuCondLb.setBackground(new java.awt.Color(255, 255, 255));
         UsuCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        UsuCondLb.setText("Usuario del conductor:");
+        UsuCondLb.setText("Usuario del conductor (\"No\" si no hay conductores adicionales):");
 
         jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -176,7 +176,6 @@ public class CreResAppCli extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Seg2Lb)
                     .addComponent(UbiEntLb)
-                    .addComponent(CatYTipLb)
                     .addComponent(FechRecLb)
                     .addComponent(UbiRecLb)
                     .addComponent(FecEnTemLb)
@@ -186,33 +185,33 @@ public class CreResAppCli extends javax.swing.JFrame {
                     .addComponent(UsuCondLb)
                     .addComponent(Seg1Lb)
                     .addComponent(ConCondLb)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(CreResBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                    .addComponent(CatYTipLb))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(FecEntTf, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UsuCliTf, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NumConAdiTf, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UsuCondTf, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, 294, Short.MAX_VALUE)
+                    .addComponent(ConCliPf, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FecRecTf, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UbiRecJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CatYTipJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Seg1Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Seg2Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ConCondPf))
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FecEntTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UsuCliTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NumConAdiTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UsuCondTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, 150, Short.MAX_VALUE)
-                            .addComponent(ConCliPf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FecRecTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UbiRecJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CatYTipJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Seg1Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Seg2Jcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ConCondPf))
-                        .addGap(15, 15, 15))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(CreResBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
                         .addComponent(VolverBtn)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(CreaReseLb)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(275, 275, 275))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(CreaReseLb)
+                        .addGap(352, 352, 352))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()

@@ -46,7 +46,6 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="Seg2Lb" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="UbiEntLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="CatYTipLb" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="FechRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="UbiRecLb" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="FecEnTemLb" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -56,40 +55,39 @@
                       <Component id="UsuCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="Seg1Lb" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="ConCondLb" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="CreResBtn" min="-2" pref="170" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="CatYTipLb" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="FecEntTf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UsuCliTf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="NumConAdiTf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UsuCondTf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UbiEntJcb" alignment="0" pref="294" max="32767" attributes="0"/>
+                      <Component id="ConCliPf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="FecRecTf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UbiRecJcb" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CatYTipJcb" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Seg1Jcb" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Seg2Jcb" alignment="0" max="32767" attributes="0"/>
+                      <Component id="ConCondPf" alignment="1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="FecEntTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UsuCliTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NumConAdiTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UsuCondTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UbiEntJcb" alignment="0" pref="150" max="32767" attributes="0"/>
-                              <Component id="ConCliPf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="FecRecTf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UbiRecJcb" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CatYTipJcb" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Seg1Jcb" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Seg2Jcb" alignment="0" max="32767" attributes="0"/>
-                              <Component id="ConCondPf" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="CreResBtn" min="-2" pref="170" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Component id="VolverBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="CreaReseLb" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                  <Component id="CreaReseLb" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -305,7 +303,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Contrase&#xf1;a del conductor:"/>
+            <Property name="text" type="java.lang.String" value="Contrase&#xf1;a del conductor (&quot;No&quot; si no hay conductores adicionales):"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="UsuCondLb">
@@ -316,7 +314,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Usuario del conductor:"/>
+            <Property name="text" type="java.lang.String" value="Usuario del conductor (&quot;No&quot; si no hay conductores adicionales):"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="UsuCliTf">

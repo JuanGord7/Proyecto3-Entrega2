@@ -117,11 +117,11 @@ public class CreaAlqu extends javax.swing.JFrame {
 
         ConCondLb.setBackground(new java.awt.Color(255, 255, 255));
         ConCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        ConCondLb.setText("Contraseña del conductor:");
+        ConCondLb.setText("Contraseña del conductor (\"No\" si no hay conductores adicionales):");
 
         UsuCondLb.setBackground(new java.awt.Color(255, 255, 255));
         UsuCondLb.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        UsuCondLb.setText("Usuario del conductor:");
+        UsuCondLb.setText("Usuario del conductor (\"No\" si no hay conductores adicionales):");
 
         jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -196,7 +196,7 @@ public class CreaAlqu extends javax.swing.JFrame {
                             .addComponent(UsuCliTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NumConAdiTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(UsuCondTf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, 184, Short.MAX_VALUE)
+                            .addComponent(UbiEntJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, 246, Short.MAX_VALUE)
                             .addComponent(ConCliPf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FecRecTf, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(UbiRecJcb, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -206,15 +206,15 @@ public class CreaAlqu extends javax.swing.JFrame {
                             .addComponent(ConCondPf))
                         .addGap(15, 15, 15))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(CreAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(35, 35, 35)
                         .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(194, 194, 194))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(323, 323, 323)
                 .addComponent(CreaAlquLb)
-                .addGap(176, 176, 176))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -278,7 +278,7 @@ public class CreaAlqu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolverBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CreAlquBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
